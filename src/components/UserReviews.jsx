@@ -42,7 +42,7 @@ export default function UserReviews() {
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="bg-white p-4 rounded-xl shadow-sm border w-full max-w-sm flex-1"
+            className="bg-bg p-4 rounded-xl shadow-sm border w-full max-w-sm flex-1"
           >
             <div className="flex items-center space-x-3 mb-2">
               <StarRating rating={review.rating} />
@@ -53,7 +53,7 @@ export default function UserReviews() {
             </p>
           </div>
         ))}
-        <button className="p-2 rounded-full bg-white border shadow-sm">
+        <button className="p-2 rounded-full bg-bg border shadow-sm">
           <ArrowRight className="w-5 h-5 text-purple-600" />
         </button>
       </div>

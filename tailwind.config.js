@@ -5,11 +5,8 @@ module.exports = {
     extend: {
       colors: {
         primary: "#4F46E5",
-        sidebar: "#1F2937",
-        bg: "#F9FAFB",
+        bg: "#FFFFFF",
         card: "#FFFFFF",
-        textDark: "#111827",
-        textLight: "#6B7280",
       },
     },
   },

@@ -3,10 +3,10 @@ import { FaBriefcase, FaFolder, FaDollarSign, FaCubes } from "react-icons/fa";
 import VisitorsCard from "./VisitorsCard";
 import CustomersBarChart from "./CustomersBarChart";
 import UserStatsCard from "./UserStatsCard";
-import UserReviews from "./UserReviews"; // ✅ Imported
+import UserReviews from "./UserReviews";
 
 const Card = ({ icon, label, value, iconColor }) => (
-  <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+  <div className="flex items-center justify-between p-4 rounded-lg border border-gray-200 bg-white">
     <div className="flex items-center space-x-2">
       <div className={`text-xl ${iconColor}`}>{icon}</div>
       <div className="text-sm font-medium text-gray-600">{label}</div>
@@ -17,7 +17,7 @@ const Card = ({ icon, label, value, iconColor }) => (
 
 const DashboardSummary = () => {
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-bg min-h-screen">
       <h2 className="text-xl font-bold mb-5 text-black">Dashboard</h2>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mb-6">

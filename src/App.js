@@ -5,11 +5,13 @@ import DashboardSummary from "./components/DashboardSummary";
 
 function App() {
   return (
-    <div className="flex min-h-screen bg-bg">
+    <div className="flex h-screen bg-bg">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col bg-bg overflow-hidden">
         <TopNavbar />
-        <DashboardSummary />
+        <div className="flex-1 overflow-y-auto">
+          <DashboardSummary />
+        </div>
       </div>
     </div>
   );

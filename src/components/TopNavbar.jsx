@@ -4,7 +4,7 @@ import LanguageSelector from "./LanguageSelector";
 
 const TopNavbar = () => {
   return (
-    <header className="w-full flex items-center justify-between px-6 py-4 bg-white shadow-sm">
+    <header className="w-full flex items-center justify-between px-6 py-4 bg-bg shadow-sm">
       <div className="flex items-center gap-2 bg-[#f6f3fe] px-4 py-2 rounded-xl w-72">
         <FaSearch className="text-primary" />
         <input

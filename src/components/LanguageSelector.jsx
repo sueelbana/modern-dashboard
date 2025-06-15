@@ -23,7 +23,7 @@ const LanguageSelector = () => {
   return (
     <div className="relative">
       <div
-        className="flex items-center gap-2 px-3 py-1.5 bg-white border rounded-full shadow-sm text-sm text-gray-700 cursor-pointer hover:bg-gray-50"
+        className="flex items-center gap-2 px-3 py-1.5 bg-bg border rounded-full shadow-sm text-sm text-gray-700 cursor-pointer hover:bg-gray-50"
         onClick={() => setIsOpen(!isOpen)}
       >
         <img src={selectedLang.img} alt="flag" className="w-5 h-5 rounded-full" />
@@ -32,7 +32,7 @@ const LanguageSelector = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute top-12 left-0 w-full z-10 bg-white border rounded-md shadow-lg py-1">
+        <div className="absolute top-12 left-0 w-full z-10 bg-bg border rounded-md shadow-lg py-1">
           {languages.map((lang, index) => (
             <div
               key={index}

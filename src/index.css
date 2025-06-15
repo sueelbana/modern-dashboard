@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 body {
-  @apply bg-bg text-textDark;
   font-family: "Cairo";
 }
+
+html, body, #root {
+  height: 100%;
+}
+
+.bg {
+  background-color: white; /* or #ffffff */
+}
+
