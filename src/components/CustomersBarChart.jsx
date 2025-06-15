@@ -24,13 +24,13 @@ const data = [
   { name: "Dec", value: 300 },
 ];
 
-const highlightIndex = 5; 
+const highlightIndex = 5;
 
 export default function CustomersBarChart() {
   const [period, setPeriod] = useState("Month");
 
   return (
-    <div className="bg-bg p-4 rounded-xl border border-gray-200 shadow-sm w-[66%]">
+    <div className="bg-bg p-4 rounded-xl border border-gray-200 shadow-sm w-full">
       <div className="grid grid-cols-4 border-b pb-3 mb-3 text-sm text-gray-700 font-semibold">
         <div>
           <div>Total Customers</div>

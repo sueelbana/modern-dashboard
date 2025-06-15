@@ -20,8 +20,8 @@ const DashboardSummary = () => {
     <div className="p-6 bg-bg min-h-screen">
       <h2 className="text-xl font-bold mb-5 text-black">Dashboard</h2>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mb-6">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-2 gap-6 col-span-2">
           <Card
             icon={<FaBriefcase />}
             label="Projects"
@@ -48,16 +48,20 @@ const DashboardSummary = () => {
           />
         </div>
 
-        <VisitorsCard />
+        {/* Visitors card fills third column */}
+        <div className="w-full">
+          <VisitorsCard />
+        </div>
       </div>
 
-      <CustomersBarChart />
+      <div className="mt-6 w-full">
+        <CustomersBarChart />
+      </div>
 
       <div className="mt-6">
         <UserStatsCard />
       </div>
 
-      {/* ✅ UserReviews Component */}
       <div className="mt-6">
         <UserReviews />
       </div>

@@ -41,7 +41,7 @@ const barData = [
 
 export default function UserStatsCard() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 mt-10">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 mt-10">
       <div className="bg-bg p-4 rounded-xl shadow-sm border w-[250px]">
         <h3 className="text-md font-semibold mb-4 text-black">User Profile</h3>
         <ResponsiveContainer width="100%" height={200}>
@@ -77,9 +77,8 @@ export default function UserStatsCard() {
         </div>
       </div>
 
-      <div className="col-span-2 bg-bg p-3 rounded-xl shadow-sm border w-[625px] -ml-[140px]	">
+      <div className="col-span-2 bg-bg p-6 rounded-xl shadow-sm border w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-  
           <div className="lg:col-span-2">
             <h3 className="text-md font-semibold mb-4 text-black">Statistic</h3>
             <ResponsiveContainer width="100%" height={300}>
@@ -105,7 +104,7 @@ export default function UserStatsCard() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          
+
           <div>
             <h3 className="text-md font-semibold mb-4 text-black">Weekly</h3>
             <div className="mb-4 space-y-2 text-sm">
