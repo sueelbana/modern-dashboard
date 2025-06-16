@@ -9,7 +9,7 @@ const ServerStatus = () => {
 
   return (
     <div className="mb-6 px-3 pt-2">
-      <h3 className="font-semibold text-black mb-3">Server Status</h3>
+      <h3 className="font-semibold text-text mb-3">Server Status</h3>
 
       {/* Bar chart */}
       <div className="flex items-end h-28 mb-3 space-x-[3px]">
@@ -25,17 +25,17 @@ const ServerStatus = () => {
       {/* Info grid */}
       <div className="grid grid-cols-3 text-center text-xs">
         <div>
-          <p className="text-gray-400">Country</p>
-          <p className="font-medium text-black">Indonesia</p>
+          <p className="text-text-secondary">Country</p>
+          <p className="font-medium text-text">Indonesia</p>
         </div>
         <div>
-          <p className="text-gray-400">Domain</p>
-          <p className="font-medium text-black">website.com</p>
+          <p className="text-text-secondary">Domain</p>
+          <p className="font-medium text-text">website.com</p>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-gray-400">Speed</p>
-          <p className="flex items-center gap-1 font-medium text-black">
-            <FaCaretUp className="text-black text-sm" /> 2.0 mbps
+          <p className="text-text-secondary">Speed</p>
+          <p className="flex items-center gap-1 font-medium text-text">
+            <FaCaretUp className="text-text text-sm" /> 2.0 mbps
           </p>
         </div>
       </div>

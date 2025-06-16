@@ -38,10 +38,10 @@ const CustomDot = (props) => {
 
 export default function VisitorsCard() {
   return (
-    <div className="p-4 rounded-lg border border-gray-200 bg-bg">
+    <div className="p-4 rounded-lg border border-border bg-bg">
       <div className="flex justify-between items-center">
-        <div className="text-sm font-bold text-black">Visitors</div>
-        <div className="text-2xl font-bold text-gray-900">345,678</div>
+        <div className="text-sm font-bold text-text">Visitors</div>
+        <div className="text-2xl font-bold text-text">345,678</div>
       </div>
       <ResponsiveContainer width="100%" height={100}>
         <AreaChart data={data}>

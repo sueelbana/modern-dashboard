@@ -42,8 +42,8 @@ const barData = [
 export default function UserStatsCard() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 mt-10">
-      <div className="bg-bg p-4 rounded-xl shadow-sm border w-[250px]">
-        <h3 className="text-md font-semibold mb-4 text-black">User Profile</h3>
+      <div className="bg-bg p-4 rounded-xl shadow-sm border border-border w-[250px]">
+        <h3 className="text-md font-semibold mb-4 text-text">User Profile</h3>
         <ResponsiveContainer width="100%" height={200}>
           <PieChart>
             <Pie
@@ -71,16 +71,16 @@ export default function UserStatsCard() {
                 />
                 {entry.name}
               </div>
-              <div className="font-bold text-gray-800">{entry.value}%</div>
+              <div className="font-bold text-text">{entry.value}%</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="col-span-2 bg-bg p-6 rounded-xl shadow-sm border w-full">
+      <div className="col-span-2 bg-bg p-6 rounded-xl shadow-sm border border-border w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2">
-            <h3 className="text-md font-semibold mb-4 text-black">Statistic</h3>
+            <h3 className="text-md font-semibold mb-4 text-text">Statistic</h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={lineData}>
                 <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
@@ -106,19 +106,19 @@ export default function UserStatsCard() {
           </div>
 
           <div>
-            <h3 className="text-md font-semibold mb-4 text-black">Weekly</h3>
+            <h3 className="text-md font-semibold mb-4 text-text">Weekly</h3>
             <div className="mb-4 space-y-2 text-sm">
               <div className="flex justify-between font-medium">
-                <span className="text-gray-600">This Week</span>
+                <span className="text-text-secondary">This Week</span>
                 <span className="text-[#6C5DD3] font-bold">+ 20%</span>
               </div>
               <div className="flex justify-between font-medium">
-                <span className="text-gray-600">Last Week</span>
+                <span className="text-text-secondary">Last Week</span>
                 <span className="text-[#FBBF24] font-bold">+ 13%</span>
               </div>
             </div>
 
-            <h4 className="text-sm font-semibold mt-4 mb-1 text-black">
+            <h4 className="text-sm font-semibold mt-4 mb-1 text-text">
               Impression
             </h4>
             <ResponsiveContainer width="110%" height={100}>
@@ -132,7 +132,7 @@ export default function UserStatsCard() {
               </BarChart>
             </ResponsiveContainer>
             <div className="flex justify-between text-sm mt-2">
-              <span className="font-bold text-black">12.345</span>
+              <span className="font-bold text-text">12.345</span>
               <span className="text-green-500 text-xs">
                 5.4% than last year
               </span>

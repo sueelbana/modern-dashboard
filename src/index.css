@@ -11,6 +11,24 @@ html, body, #root {
 }
 
 .bg {
-  background-color: white; /* or #ffffff */
+  background-color: white; 
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-card: #ffffff;
+  --color-text: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-border: #E5E7EB;
+  --color-hover: #F3F4F6;
+}
+
+.dark {
+  --color-bg: #18113C;
+  --color-card: #1F1B4B;
+  --color-text: #F3F4F6;
+  --color-text-secondary: #A0AEC0;
+  --color-border: #2D2D4D;
+  --color-hover: #2D2D4D;
 }
 

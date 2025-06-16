@@ -8,15 +8,16 @@ import {
   FaDollarSign,
   FaTicketAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 
 const Sidebar = () => {
   const iconClass =
-    "text-2xl text-gray-400 hover:text-primary transition-colors";
+    "text-2xl text-text-secondary hover:text-primary transition-colors";
   const activeClass = "text-primary";
 
   return (
-    <aside className="h-full w-20 bg-bg flex flex-col items-center py-6 shadow border-r border-gray-200">
+    <aside className="h-full w-20 bg-bg border-r border-border shadow flex flex-col items-center py-6">
       {/* Logo */}
       <div className="mb-10">
         <img src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
@@ -24,14 +25,30 @@ const Sidebar = () => {
 
       {/* Icons */}
       <nav className="flex flex-col gap-8 items-center">
-        <FaHome className={`${iconClass} ${activeClass}`} />
-        <FaEnvelope className={iconClass} />
-        <FaAddressBook className={iconClass} />
-        <FaCoins className={iconClass} />
-        <FaThLarge className={iconClass} />
-        <FaBook className={iconClass} />
-        <FaDollarSign className={iconClass} />
-        <FaTicketAlt className={iconClass} />
+        <Link to="/">
+          <FaHome className={`${iconClass} ${activeClass}`} />
+        </Link>
+        <Link to="/email">
+          <FaEnvelope className={iconClass} />
+        </Link>
+        <Link to="/contacts">
+          <FaAddressBook className={iconClass} />
+        </Link>
+        <Link to="/finance">
+          <FaCoins className={iconClass} />
+        </Link>
+        <Link to="/dashboard">
+          <FaThLarge className={iconClass} />
+        </Link>
+        <Link to="/reports">
+          <FaBook className={iconClass} />
+        </Link>
+        <Link to="/pricing">
+          <FaDollarSign className={iconClass} />
+        </Link>
+        <Link to="/tickets">
+          <FaTicketAlt className={iconClass} />
+        </Link>
       </nav>
     </aside>
   );

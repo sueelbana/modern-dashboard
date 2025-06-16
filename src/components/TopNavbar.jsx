@@ -1,40 +1,72 @@
+import { useEffect, useState } from "react";
 import { FaSearch, FaBell, FaRegCommentDots, FaCog } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa"; // for theme toggle
 import avatar from "../assets/avatar.jpg";
 import LanguageSelector from "./LanguageSelector";
 
 const TopNavbar = () => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <header className="w-full flex items-center justify-between px-6 py-4 bg-bg shadow-sm">
-      <div className="flex items-center gap-2 bg-[#f6f3fe] px-4 py-2 rounded-xl w-72">
+    <header className="w-full flex items-center justify-between px-6 py-4 bg-bg shadow-sm border-b border-border text-text">
+      {/* Search Bar */}
+      <div className="flex items-center gap-2 bg-border px-4 py-2 rounded-xl w-72">
         <FaSearch className="text-primary" />
         <input
           type="text"
           placeholder="Search here..."
-          className="bg-transparent outline-none w-full text-sm text-gray-700"
+          className="bg-border w-full text-sm text-text-secondary placeholder:text-text-secondary"
         />
       </div>
 
+      {/* Actions */}
       <div className="flex items-center gap-6">
-      <LanguageSelector />
+        <LanguageSelector />
 
-        <div className="relative hover:bg-[#eceffe] hover:text-[#6c63ff] p-2 rounded-lg transition duration-300 cursor-pointer">
-          <FaRegCommentDots className="text-gray-400 text-xl" />
+        {/* Theme Toggle Icon */}
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-lg bg-primary text-white hover:opacity-90 transition"
+          title="Toggle Dark Mode"
+        >
+          {theme === "dark" ? <FaSun size={16} /> : <FaMoon size={16} />}
+        </button>
+
+        {/* Messages Icon */}
+        <div className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer">
+          <FaRegCommentDots className="text-text-secondary text-xl" />
           <span className="absolute -top-1 -right-1 w-4 h-4 text-xs bg-primary text-white rounded-full flex items-center justify-center">
             2
           </span>
         </div>
 
-        <div className="relative hover:bg-[#eceffe] hover:text-[#6c63ff] p-2 rounded-lg transition duration-300 cursor-pointer">
-          <FaBell className="text-gray-400 text-xl" />
+        {/* Notifications Icon */}
+        <div className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer">
+          <FaBell className="text-text-secondary text-xl" />
           <span className="absolute -top-1 -right-1 w-4 h-4 text-xs bg-primary text-white rounded-full flex items-center justify-center">
             2
           </span>
         </div>
 
-        <div className="relative hover:bg-[#eceffe] hover:text-[#6c63ff] p-2 rounded-lg transition duration-300 cursor-pointer">
-          <FaCog className="text-gray-400 text-xl" />
+        {/* Settings Icon */}
+        <div className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer">
+          <FaCog className="text-text-secondary text-xl" />
         </div>
 
+        {/* User Info */}
         <div className="flex items-center gap-3">
           <img
             src={avatar}
@@ -42,8 +74,8 @@ const TopNavbar = () => {
             className="w-9 h-9 object-cover rounded-xl"
           />
           <div className="text-sm">
-            <div className="font-semibold text-gray-800">Zara Wardani</div>
-            <div className="text-gray-400">Admin</div>
+            <div className="font-semibold text-text">Zara Wardani</div>
+            <div className="text-text-secondary">Admin</div>
           </div>
         </div>
       </div>

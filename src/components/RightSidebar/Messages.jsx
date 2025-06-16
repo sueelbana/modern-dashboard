@@ -14,7 +14,7 @@ const Messages = () => {
         <h3 className="font-semibold">Messages</h3>
         <a href="#" className="text-xs text-blue-500">View All</a>
       </div>
-      <ul className="space-y-2 text-xs text-gray-700">
+      <ul className="space-y-2 text-xs text-text">
         {messages.map((msg, index) => (
           <li key={index} className="flex items-start gap-2">
             <div className={`w-6 h-6 rounded ${msg.color}`}></div>

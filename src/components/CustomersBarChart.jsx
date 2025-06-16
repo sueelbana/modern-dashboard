@@ -30,11 +30,11 @@ export default function CustomersBarChart() {
   const [period, setPeriod] = useState("Month");
 
   return (
-    <div className="bg-bg p-4 rounded-xl border border-gray-200 shadow-sm w-full">
-      <div className="grid grid-cols-4 border-b pb-3 mb-3 text-sm text-gray-700 font-semibold">
+    <div className="bg-bg p-4 rounded-xl border border-border shadow-sm w-full">
+      <div className="grid grid-cols-4 border-b pb-3 mb-3 text-sm text-text-secondary">
         <div>
           <div>Total Customers</div>
-          <div className="text-lg font-bold text-black">345,678</div>
+          <div className="text-lg font-bold text-text">345,678</div>
         </div>
         <div>
           <div>New User</div>
@@ -44,17 +44,17 @@ export default function CustomersBarChart() {
         </div>
         <div>
           <div>Growth</div>
-          <div className="text-lg font-bold text-black">+10%</div>
+          <div className="text-lg font-bold text-text">+10%</div>
         </div>
         <div className="flex flex-col items-end justify-end">
-          <label htmlFor="period-select" className="mb-1 text-sm text-gray-700">
+          <label htmlFor="period-select" className="mb-1 text-sm text-text-secondary">
             Period
           </label>
           <select
             id="period-select"
             value={period}
             onChange={(e) => setPeriod(e.target.value)}
-            className="bg-white border border-gray-300 rounded px-2 py-1 text-sm font-bold text-black focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="bg-bg border border-border rounded px-2 py-1 text-sm font-bold text-text focus:outline-none focus:ring-2 focus:ring-indigo-400"
           >
             <option value="Month">Month</option>
             <option value="Quarter">Quarter</option>
@@ -68,7 +68,7 @@ export default function CustomersBarChart() {
           <BarChart data={data}>
             <XAxis dataKey="name" axisLine={false} tickLine={false} />
             <Tooltip cursor={{ fill: "transparent" }} />
-            <Bar dataKey="value" radius={[6, 6, 0, 0]} barSize={20}>
+            <Bar dataKey="value" radius={[6, 6, 0, 0]} barSize={30}>
               {data.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
