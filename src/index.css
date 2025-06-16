@@ -24,11 +24,21 @@ html, body, #root {
 }
 
 .dark {
-  --color-bg: #18113C;
+  --color-bg: #2E293E;
   --color-card: #1F1B4B;
   --color-text: #F3F4F6;
   --color-text-secondary: #A0AEC0;
   --color-border: #2D2D4D;
   --color-hover: #2D2D4D;
+}
+
+
+.preview-panel {
+  background-color: rgba(245, 239, 252, 1); 
+}
+
+.dark .preview-panel {
+  background-color: rgba(30, 25, 42, 1); 
+  color: white; 
 }
 

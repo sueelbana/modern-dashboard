@@ -5,6 +5,7 @@ import TopNavbar from "./components/TopNavbar";
 import DashboardSummary from "./components/DashboardSummary";
 import RightSidebar from "./components/RightSidebar/RightSidebar";
 import Email from "./pages/Email";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -20,23 +21,31 @@ function App() {
 
           <div className="flex flex-1 overflow-hidden">
             <Switch>
+              {/* Dashboard Route */}
               <Route exact path="/">
                 <div className="flex flex-1 overflow-hidden">
                   <div className="flex-1 overflow-y-auto p-6">
                     <DashboardSummary />
                   </div>
-                  {/* Right Sidebar only on Dashboard */}
                   <RightSidebar />
                 </div>
               </Route>
 
+              {/* Email Page */}
               <Route path="/email">
                 <div className="flex-1 overflow-y-auto p-6">
                   <Email />
                 </div>
               </Route>
 
-              {/* Add more routes here as needed */}
+              {/* Contacts Page */}
+              <Route path="/contacts">
+                <div className="flex-1 overflow-y-auto p-6">
+                  <ContactPage />
+                </div>
+              </Route>
+
+              {/* Add more routes here */}
             </Switch>
           </div>
         </div>
