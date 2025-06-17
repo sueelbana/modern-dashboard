@@ -1,9 +1,6 @@
 import React from "react";
 import MarketCard from "../components/MarketCard";
-import CryptoChart from "../components/CryptoChart";
-import MarketActivity from "../components/MarketActivity";
-import BuySell from "../components/BuySell";
-import SummarySidebar from "../components/SummarySidebar";
+import CryptoInfoBar from "../components/CryptoInfoBar";
 
 const btcData = [
   { value: 20000 },
@@ -98,19 +95,11 @@ const CryptoDashboard = () => {
             isUp={false}
           />
         </div>
-
-        {/* Main Crypto Chart */}
-        <CryptoChart />
-
-        {/* Market Activity & Buy/Sell Section */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-          <MarketActivity />
-          <BuySell />
+        <div className="p-6">
+          <CryptoInfoBar />
+          {/* Other dashboard content */}
         </div>
       </div>
-
-      {/* Right Sidebar */}
-      <SummarySidebar />
     </div>
   );
 };
