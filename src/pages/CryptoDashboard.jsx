@@ -98,7 +98,9 @@ const CryptoDashboard = () => {
         </div>
         <div className="p-6">
           <CryptoInfoBar />
-          <CandleChart />
+          <div className="mt-6 w-full">
+            <CandleChart />
+          </div>
         </div>
       </div>
     </div>

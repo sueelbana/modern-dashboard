@@ -1,18 +1,14 @@
+// src/components/CryptoChart.jsx
 import React, { useEffect, useRef } from "react";
-import {
-  createChart,
-  CrosshairMode,
-} from "lightweight-charts";
+import { createChart, CrosshairMode } from "lightweight-charts";
 
 const CandleChart = () => {
-  const chartContainerRef = useRef();
+  const chartContainerRef = useRef(null);
 
   useEffect(() => {
     const chart = createChart(chartContainerRef.current, {
-      width: 800,
-      height: 300,
       layout: {
-        background: { color: "#fff" },
+        background: { color: "white" },
         textColor: "#333",
       },
       grid: {
@@ -22,90 +18,79 @@ const CandleChart = () => {
       crosshair: {
         mode: CrosshairMode.Normal,
       },
+      rightPriceScale: {
+        borderColor: "#ccc",
+      },
       timeScale: {
+        borderColor: "#ccc",
         timeVisible: true,
         secondsVisible: false,
       },
+      height: 400,
     });
 
-    const candleSeries = chart.addCandlestickSeries({
-      upColor: "#ec6c5c",
-      downColor: "#4b3f92",
+    const candlestickSeries = chart.addCandlestickSeries({
+      upColor: "#2962FF",
+      downColor: "#D32F2F",
       borderVisible: false,
-      wickUpColor: "#ec6c5c",
-      wickDownColor: "#4b3f92",
-    });
-
-    const lineSeriesRed = chart.addLineSeries({
-      color: "#ec6c5c",
-      lineWidth: 1,
-    });
-
-    const lineSeriesGreen = chart.addLineSeries({
-      color: "#57b560",
-      lineWidth: 1,
-    });
-
-    const lineSeriesBlack = chart.addLineSeries({
-      color: "#111",
-      lineWidth: 2,
+      wickUpColor: "#2962FF",
+      wickDownColor: "#D32F2F",
     });
 
     const volumeSeries = chart.addHistogramSeries({
-      color: "#26a69a",
-      priceFormat: {
-        type: "volume",
-      },
-      priceScaleId: "",
-      scaleMargins: {
-        top: 0.85,
-        bottom: 0,
-      },
+      color: "#888",
+      priceFormat: { type: "volume" },
+      priceScaleId: "", // set empty to overlay
+      scaleMargins: { top: 0.8, bottom: 0 },
     });
 
-    // Sample intraday timestamp data (Unix time in seconds)
-    const candles = [
-      { time: 1718612400, open: 1.3, high: 1.45, low: 1.25, close: 1.35 },
-      { time: 1718616000, open: 1.35, high: 1.42, low: 1.28, close: 1.31 },
-      { time: 1718619600, open: 1.31, high: 1.37, low: 1.26, close: 1.36 },
-      { time: 1718623200, open: 1.36, high: 1.38, low: 1.32, close: 1.34 },
-      { time: 1718626800, open: 1.34, high: 1.4, low: 1.3, close: 1.33 },
-      { time: 1718630400, open: 1.33, high: 1.36, low: 1.2, close: 1.22 },
-      { time: 1718634000, open: 1.22, high: 1.25, low: 1.15, close: 1.18 },
-      { time: 1718637600, open: 1.18, high: 1.3, low: 1.16, close: 1.29 },
-    ];
+    const lineSeries1 = chart.addLineSeries({
+      color: "green",
+      lineWidth: 1,
+    });
 
-    const redLine = candles.map((c) => ({
-      time: c.time,
-      value: c.high + 0.05,
-    }));
+    const lineSeries2 = chart.addLineSeries({
+      color: "red",
+      lineWidth: 1,
+    });
 
-    const greenLine = candles.map((c) => ({
-      time: c.time,
-      value: c.low - 0.05,
-    }));
+    // Dummy data
+    const now = Date.now() / 1000;
+    const candleData = [];
+    const volumeData = [];
+    const lineData1 = [];
+    const lineData2 = [];
 
-    const blackLine = candles.map((c) => ({
-      time: c.time,
-      value: 1.35,
-    }));
+    for (let i = 0; i < 30; i++) {
+      const time = Math.floor(now) - (30 - i) * 60 * 5;
 
-    const volumes = candles.map((c, index) => ({
-      time: c.time,
-      value: Math.floor(Math.random() * 50 + 20),
-      color: c.close > c.open ? "#ec6c5c" : "#4b3f92",
-    }));
+      const open = 1.2 + Math.random() * 0.4;
+      const close = open + (Math.random() - 0.5) * 0.3;
+      const high = Math.max(open, close) + Math.random() * 0.2;
+      const low = Math.min(open, close) - Math.random() * 0.2;
+      const volume = Math.floor(10 + Math.random() * 50);
 
-    candleSeries.setData(candles);
-    lineSeriesRed.setData(redLine);
-    lineSeriesGreen.setData(greenLine);
-    lineSeriesBlack.setData(blackLine);
-    volumeSeries.setData(volumes);
+      candleData.push({ time, open, high, low, close });
+      volumeData.push({
+        time,
+        value: volume,
+        color: close > open ? "#2962FF" : "#D32F2F",
+      });
+      lineData1.push({ time, value: open + 0.1 });
+      lineData2.push({ time, value: open + 0.2 });
+    }
+
+    candlestickSeries.setData(candleData);
+    volumeSeries.setData(volumeData);
+    lineSeries1.setData(lineData1);
+    lineSeries2.setData(lineData2);
+
+    chart.timeScale().fitContent();
 
     return () => chart.remove();
   }, []);
 
-  return <div ref={chartContainerRef} />;
+  return <div ref={chartContainerRef} className="w-full h-[400px]"/>;
 };
 
 export default CandleChart;
