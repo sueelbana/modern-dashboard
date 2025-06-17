@@ -1,6 +1,7 @@
 import React from "react";
 import MarketCard from "../components/MarketCard";
 import CryptoInfoBar from "../components/CryptoInfoBar";
+import CandleChart from "../components/CandleChart";
 
 const btcData = [
   { value: 20000 },
@@ -97,7 +98,7 @@ const CryptoDashboard = () => {
         </div>
         <div className="p-6">
           <CryptoInfoBar />
-          {/* Other dashboard content */}
+          <CandleChart />
         </div>
       </div>
     </div>
