@@ -34,7 +34,7 @@ const Sidebar = () => {
         <Link to="/contacts">
           <FaAddressBook className={iconClass} />
         </Link>
-        <Link to="/finance">
+        <Link to="/crypto">
           <FaCoins className={iconClass} />
         </Link>
         <Link to="/dashboard">

@@ -6,6 +6,7 @@ import DashboardSummary from "./components/DashboardSummary";
 import RightSidebar from "./components/RightSidebar/RightSidebar";
 import Email from "./pages/Email";
 import ContactPage from "./pages/ContactPage";
+import CryptoDashboard from "./pages/CryptoDashboard";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
                 </div>
               </Route>
 
+              {/* Crypto Dashboard Route */}
+              <Route path="/crypto">
+                <CryptoDashboard />
+              </Route>
+
               {/* Email Page */}
               <Route path="/email">
                 <div className="flex-1 overflow-y-auto p-6">
@@ -44,8 +50,6 @@ function App() {
                   <ContactPage />
                 </div>
               </Route>
-
-              {/* Add more routes here */}
             </Switch>
           </div>
         </div>
