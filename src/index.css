@@ -42,3 +42,18 @@ html, body, #root {
   color: white; 
 }
 
+.month-color {
+  background-color: rgba(236, 238, 251, 1);
+}
+
+.dark .month-color {
+  background-color: rgba(46, 41, 62, 1);
+}
+
+.button {
+  background-color: rgba(236, 238, 251, 1);
+}
+
+.dark .button {
+  background-color: rgba(46, 41, 62, 1);
+}

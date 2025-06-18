@@ -7,6 +7,7 @@ import RightSidebar from "./components/RightSidebar/RightSidebar";
 import Email from "./pages/Email";
 import ContactPage from "./pages/ContactPage";
 import CryptoDashboard from "./pages/CryptoDashboard";
+import Kanban from "./pages/Kanban";
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
                   <ContactPage />
                 </div>
               </Route>
+              
+              {/* Kanban Page */}
+              <Route path="/kanban">
+                <div className="flex-1 overflow-y-auto p-6">
+                  <Kanban />
+                </div>
+              </Route>
+
             </Switch>
           </div>
         </div>

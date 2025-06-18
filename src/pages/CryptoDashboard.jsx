@@ -2,6 +2,9 @@ import React from "react";
 import MarketCard from "../components/MarketCard";
 import CryptoInfoBar from "../components/CryptoInfoBar";
 import CandleChart from "../components/CandleChart";
+import MarketActivity from "../components/MarketActivity";
+import BuySell from "../components/BuySell";
+import SummarySidebar from "../components/SummarySidebar";
 
 const btcData = [
   { value: 20000 },
@@ -96,12 +99,23 @@ const CryptoDashboard = () => {
             isUp={false}
           />
         </div>
+
         <div className="p-6">
           <CryptoInfoBar />
-          <div className="mt-6 w-full">
-            <CandleChart />
-          </div>
         </div>
+
+        <div className="mt-6 w-full">
+          <CandleChart />
+        </div>
+
+        {/* Market Activity & Buy/Sell */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <MarketActivity />
+          <BuySell />
+        </div>
+      </div>
+      <div className="w-[300px] border-l border-gray-200 p-4 bg-white overflow-y-auto">
+        <SummarySidebar />
       </div>
     </div>
   );

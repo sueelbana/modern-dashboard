@@ -37,7 +37,7 @@ const Sidebar = () => {
         <Link to="/crypto">
           <FaCoins className={iconClass} />
         </Link>
-        <Link to="/dashboard">
+        <Link to="/kanban">
           <FaThLarge className={iconClass} />
         </Link>
         <Link to="/reports">
