@@ -2,7 +2,7 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { FaPaperclip } from "react-icons/fa"; // React icon
+import { FaPaperclip } from "react-icons/fa"; 
 
 const KanbanCard = ({ id, title, desc }) => {
   const {

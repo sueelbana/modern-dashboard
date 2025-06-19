@@ -8,6 +8,7 @@ import Email from "./pages/Email";
 import ContactPage from "./pages/ContactPage";
 import CryptoDashboard from "./pages/CryptoDashboard";
 import Kanban from "./pages/Kanban";
+import Reports from "./pages/Reports";
 
 function App() {
   return (
@@ -56,6 +57,13 @@ function App() {
               <Route path="/kanban">
                 <div className="flex-1 overflow-y-auto p-6">
                   <Kanban />
+                </div>
+              </Route>
+
+              {/* Reports Page */}
+              <Route path="/reports">
+                <div className="flex-1 overflow-y-auto p-6">
+                  <Reports />
                 </div>
               </Route>
 

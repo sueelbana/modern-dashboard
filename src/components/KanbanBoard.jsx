@@ -49,12 +49,12 @@ const initialData = {
     {
       id: "6",
       title: "Design",
-      desc: "Sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
     },
     {
       id: "7",
       title: "Research",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
     },
   ],
   Revision: [],
