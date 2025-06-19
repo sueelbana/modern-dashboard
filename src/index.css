@@ -57,3 +57,11 @@ html, body, #root {
 .dark .button {
   background-color: rgba(46, 41, 62, 1);
 }
+
+.table {
+  background-color: rgba(236, 238, 251, 1);
+}
+
+.dark .table {
+background-color: rgba(46, 41, 62, 1);
+}
