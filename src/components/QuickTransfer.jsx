@@ -1,0 +1,42 @@
+// components/QuickTransfer.jsx
+import React from "react";
+import { FaPlus, FaArrowRight } from "react-icons/fa";
+
+const users = ["Tony", "Karen", "Jordan"];
+
+const QuickTransfer = () => {
+  return (
+    <div className="border border-border rounded-xl p-6 space-y-6">
+      {/* Avatars */}
+      <div className="flex items-center gap-4">
+        {users.map((user, index) => (
+          <div key={index} className="text-center">
+            <div className="w-10 h-10 rounded bg-gray-400 mb-1 mx-auto"></div>
+            <p className="text-xs text-text font-semibold">{user}</p>
+          </div>
+        ))}
+        <button className="w-10 h-10 bg-indigo-600 rounded text-text flex items-center justify-center">
+          <FaPlus className="text-sm" />
+        </button>
+      </div>
+
+      {/* Amount Input */}
+      <div>
+        <label className="text-sm text-text">Amount</label>
+        <input
+          type="text"
+          value="$100"
+          readOnly
+          className="mt-1 w-full px-4 py-2 bg-gray-100 rounded text-sm"
+        />
+      </div>
+
+      {/* Transfer Button */}
+      <button className="w-full bg-indigo-600 text-white py-2 rounded font-semibold flex items-center justify-center gap-2">
+        Transfer <FaArrowRight className="text-xs" />
+      </button>
+    </div>
+  );
+};
+
+export default QuickTransfer;

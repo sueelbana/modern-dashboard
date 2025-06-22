@@ -43,7 +43,7 @@ const Sidebar = () => {
         <Link to="/reports">
           <FaBook className={iconClass} />
         </Link>
-        <Link to="/pricing">
+        <Link to="/banking">
           <FaDollarSign className={iconClass} />
         </Link>
         <Link to="/tickets">

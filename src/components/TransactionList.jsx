@@ -1,0 +1,89 @@
+import { FiMoreHorizontal } from "react-icons/fi";
+import { HiArrowsRightLeft } from "react-icons/hi2";
+
+const transactions = [
+  {
+    title: "To Heaven Studio",
+    type: "Service",
+    date: "12 June, 2021",
+    amount: "- $650,00",
+  },
+  {
+    title: "Monthly Subcription",
+    type: "Payment",
+    date: "12 June, 2021",
+    amount: "- $650,00",
+  },
+  {
+    title: "Groceries",
+    type: "Payment",
+    date: "12 June, 2021",
+    amount: "- $650,00",
+  },
+  {
+    title: "Icon Studio",
+    type: "Service",
+    date: "12 June, 2021",
+    amount: "- $650,00",
+  },
+];
+
+const TransactionList = () => {
+  return (
+    <div className="bg-bg p-6 rounded-xl">
+      <div className="mb-2">
+        <h3 className="text-lg font-bold text-text">Lastest Transaction</h3>
+      </div>
+
+      {/* Header Row */}
+      <div className="grid grid-cols-4 items-center mb-2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div className="text-right">
+          <a href="#" className="text-primary font-bold text-sm">
+            View all
+          </a>
+        </div>
+      </div>
+
+      {/* Transactions */}
+      <div className="space-y-4">
+        {transactions.map((item, idx) => (
+          <div
+            key={idx}
+            className="grid grid-cols-4 items-center gap-4 text-sm text-text-secondary"
+          >
+            {/* Icon + Title */}
+            <div className="flex items-center gap-3">
+              <div className="bg-primary p-2 rounded-lg text-white">
+                <HiArrowsRightLeft className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-text">{item.title}</p>
+                <p className="text-xs text-red-500">{item.type}</p>
+              </div>
+            </div>
+
+            {/* Date */}
+            <div className="text-center text-xs text-gray-500">{item.date}</div>
+
+            {/* Amount */}
+            <div className="text-right font-semibold text-text">
+              {item.amount}
+            </div>
+
+            {/* Options Button */}
+            <div className="text-right">
+              <button className="p-2 rounded hover:bg-gray-100 ml-4">
+                <FiMoreHorizontal className="text-gray-400" />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default TransactionList;

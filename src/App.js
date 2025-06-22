@@ -9,6 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import CryptoDashboard from "./pages/CryptoDashboard";
 import Kanban from "./pages/Kanban";
 import Reports from "./pages/Reports";
+import Banking from "./pages/Banking";
 
 function App() {
   return (
@@ -64,6 +65,13 @@ function App() {
               <Route path="/reports">
                 <div className="flex-1 overflow-y-auto p-6">
                   <Reports />
+                </div>
+              </Route>
+
+              {/* Banking Page */}
+              <Route path="/banking">
+                <div className="flex-1 overflow-y-auto p-6">
+                  <Banking />
                 </div>
               </Route>
 
