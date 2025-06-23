@@ -1,4 +1,3 @@
-// components/QuickTransfer.jsx
 import React from "react";
 import { FaPlus, FaArrowRight } from "react-icons/fa";
 
@@ -7,7 +6,6 @@ const users = ["Tony", "Karen", "Jordan"];
 const QuickTransfer = () => {
   return (
     <div className="border border-border rounded-xl p-6 space-y-6">
-      {/* Avatars */}
       <div className="flex items-center gap-4">
         {users.map((user, index) => (
           <div key={index} className="text-center">
@@ -15,9 +13,15 @@ const QuickTransfer = () => {
             <p className="text-xs text-text font-semibold">{user}</p>
           </div>
         ))}
-        <button className="w-10 h-10 bg-indigo-600 rounded text-text flex items-center justify-center">
-          <FaPlus className="text-sm" />
-        </button>
+
+        {/* Plus icon as a button with aligned layout */}
+        <div className="text-center">
+          <button className="w-10 h-10 bg-indigo-600 rounded mb-1 mx-auto flex items-center justify-center text-white">
+            <FaPlus className="text-sm" />
+          </button>
+          <p className="text-xs text-transparent font-semibold">+</p>{" "}
+          {/* Keeps vertical alignment */}
+        </div>
       </div>
 
       {/* Amount Input */}
