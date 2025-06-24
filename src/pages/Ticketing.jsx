@@ -46,7 +46,7 @@ const Ticketing = () => {
         <h2 className="text-2xl text-text mb-6">Ticketing</h2>
 
         {/* Ticket Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {ticketData.map((item, index) => (
             <div
               key={index}

@@ -12,7 +12,7 @@ import {
 
 const PreviewPanel = () => {
   return (
-    <div className="w-[350px] p-6 preview-panel text-gray-700">
+    <div className="w-[350px] h-full min-h-[calc(100vh-4rem)] overflow-y-auto preview-panel p-6 text-gray-700">
       <div className="flex justify-between items-center mb-4">
         <span className="font-bold">Preview</span>
         <div className="flex space-x-2">
@@ -42,9 +42,7 @@ const PreviewPanel = () => {
         Daily Meeting Schedule with
         <br /> Stakeholders
       </h2>
-      <p className="text-sm text-text mb-4">
-        Today, March 30th 2021 06:45 PM
-      </p>
+      <p className="text-sm text-text mb-4">Today, March 30th 2021 06:45 PM</p>
 
       <div className="flex items-center space-x-3 mb-3">
         <div className="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-text font-bold">

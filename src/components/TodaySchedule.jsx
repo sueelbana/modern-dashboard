@@ -35,7 +35,7 @@ const TodaySchedule = () => {
   return (
     <div className="p-4 w-full lg:w-80 preview-panel">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg text-text">Today</h2>
+        <h2 className="text-lg font-bold text-text">Today</h2>
         <p className="text-sm text-text-secondary">
           Thursday, 10th April , 2021
         </p>
@@ -68,9 +68,7 @@ const TodaySchedule = () => {
               </div>
             </div>
 
-            <h3 className="text-sm text-text mb-1">
-              {event.title}
-            </h3>
+            <h3 className="text-sm text-text mb-1">{event.title}</h3>
             <p className="text-xs text-gray-500">{event.desc}</p>
           </div>
         ))}
