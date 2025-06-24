@@ -2,20 +2,68 @@ import React from "react";
 import { FaCaretUp } from "react-icons/fa";
 
 const ServerStatus = () => {
-  // Mock data for vertical bars
-  const bars = new Array(50).fill(0).map(() =>
-    Math.floor(Math.random() * 40) + 10
-  );
+  // 50 bars with #17, #19, #20 very high
+  const barHeights = [
+    20,
+    28,
+    18,
+    32,
+    25,
+    10,
+    38,
+    40,
+    50,
+    45, // 1–10
+    12,
+    6,
+    24,
+    10,
+    30,
+    28, // 11–16
+    100, // 17 - very tall
+    16, // 18 - normal
+    90, // 19 - very tall
+    85, // 20 - very tall
+    50,
+    42,
+    38,
+    36,
+    44,
+    18,
+    14,
+    20,
+    28,
+    40, // 21–30
+    10,
+    12,
+    16,
+    30,
+    18,
+    10,
+    24,
+    40,
+    38,
+    36, // 31–40
+    20,
+    16,
+    12,
+    32,
+    44,
+    18,
+    24,
+    40,
+    30,
+    12, // 41–50
+  ];
 
   return (
-    <div className="mb-6 px-3 pt-2">
-      <h3 className="font-semibold text-text mb-3">Server Status</h3>
+    <div className="p-4 bg-transparent">
+      <h3 className="text-lg font-bold text-text mb-4">Server Status</h3>
 
-      {/* Bar chart */}
-      <div className="flex items-end h-28 mb-3 space-x-[3px]">
-        {bars.map((height, i) => (
+      <div className="flex items-end justify-between h-28 mb-6">
+        {barHeights.map((height, index) => (
           <div
-            key={i}
+            key={index}
             className="w-[2px] bg-indigo-500"
             style={{ height: `${height}px` }}
           ></div>
