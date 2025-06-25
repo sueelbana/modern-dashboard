@@ -8,8 +8,8 @@ const CandleChart = () => {
   useEffect(() => {
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { color: "white" },
-        textColor: "#333",
+        background: { color: "transparent" },
+        textColor: "gray",
       },
       grid: {
         vertLines: { color: "#eee" },
@@ -90,7 +90,7 @@ const CandleChart = () => {
     return () => chart.remove();
   }, []);
 
-  return <div ref={chartContainerRef} className="w-full h-[400px]"/>;
+  return <div ref={chartContainerRef} className="w-full h-[400px]" />;
 };
 
 export default CandleChart;
