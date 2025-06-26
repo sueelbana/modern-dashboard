@@ -1,38 +1,44 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { HiArrowsRightLeft } from "react-icons/hi2";
 
 const transactions = [
   {
-    title: "To Heaven Studio",
-    type: "Service",
+    titleKey: "transactions.toHeaven",
+    typeKey: "transactions.service",
     date: "12 June, 2021",
-    amount: "- $650,00",
+    amount: "- $650.00",
   },
   {
-    title: "Monthly Subcription",
-    type: "Payment",
+    titleKey: "transactions.subscription",
+    typeKey: "transactions.payment",
     date: "12 June, 2021",
-    amount: "- $650,00",
+    amount: "- $650.00",
   },
   {
-    title: "Groceries",
-    type: "Payment",
+    titleKey: "transactions.groceries",
+    typeKey: "transactions.payment",
     date: "12 June, 2021",
-    amount: "- $650,00",
+    amount: "- $650.00",
   },
   {
-    title: "Icon Studio",
-    type: "Service",
+    titleKey: "transactions.iconStudio",
+    typeKey: "transactions.service",
     date: "12 June, 2021",
-    amount: "- $650,00",
+    amount: "- $650.00",
   },
 ];
 
 const TransactionList = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-bg p-6 rounded-xl">
       <div className="mb-2">
-        <h3 className="text-lg font-bold text-text">Lastest Transaction</h3>
+        <h3 className="text-lg font-bold text-text">
+          {t("transactions.title")}
+        </h3>
       </div>
 
       {/* Header Row */}
@@ -42,7 +48,7 @@ const TransactionList = () => {
         <div></div>
         <div className="text-right">
           <a href="#" className="text-primary font-bold text-sm">
-            View all
+            {t("transactions.view_all")}
           </a>
         </div>
       </div>
@@ -60,8 +66,8 @@ const TransactionList = () => {
                 <HiArrowsRightLeft className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-text">{item.title}</p>
-                <p className="text-xs text-red-500">{item.type}</p>
+                <p className="text-text">{t(item.titleKey)}</p>
+                <p className="text-xs text-red-500">{t(item.typeKey)}</p>
               </div>
             </div>
 

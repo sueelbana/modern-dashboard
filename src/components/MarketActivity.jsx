@@ -9,6 +9,7 @@ import {
   Legend,
   CartesianGrid,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { name: "Jan", thisMonth: 7000, lastMonth: 4000 },
@@ -21,13 +22,15 @@ const data = [
   { name: "Aug", thisMonth: 3000, lastMonth: 2500 },
 ];
 
-const MarketActivity = () => {
+export default function MarketActivity() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-bg p-4 rounded-lg border border-border">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="font-semibold text-text">Market Activity</h3>
+        <h3 className="font-semibold text-text">{t("marketActivity.title")}</h3>
         <button className="text-sm text-text border month-color px-2 py-1 rounded flex items-center gap-1">
-          Month <span className="text-xs">▾</span>
+          {t("marketActivity.filter.month")} <span className="text-xs">▾</span>
         </button>
       </div>
       <ResponsiveContainer width="100%" height={250}>
@@ -36,10 +39,17 @@ const MarketActivity = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Legend />
+          <Legend
+            formatter={(value) =>
+              value === "thisMonth"
+                ? t("marketActivity.series.thisMonth")
+                : t("marketActivity.series.lastMonth")
+            }
+          />
           <Line
             type="monotone"
             dataKey="thisMonth"
+            name={t("marketActivity.series.thisMonth")}
             stroke="#5A45F4"
             strokeWidth={3}
             dot={{ r: 5 }}
@@ -47,6 +57,7 @@ const MarketActivity = () => {
           <Line
             type="monotone"
             dataKey="lastMonth"
+            name={t("marketActivity.series.lastMonth")}
             stroke="#F4C045"
             strokeWidth={3}
             dot={{ r: 5 }}
@@ -55,6 +66,4 @@ const MarketActivity = () => {
       </ResponsiveContainer>
     </div>
   );
-};
-
-export default MarketActivity;
+}

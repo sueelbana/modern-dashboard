@@ -1,4 +1,3 @@
-// components/ProfitsCard.jsx
 import React from "react";
 import {
   LineChart,
@@ -12,6 +11,7 @@ import {
 } from "recharts";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { IoChevronDownSharp } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 const incomeData = [
   { name: "Mon", value: 100 },
@@ -34,12 +34,16 @@ const expenseData = [
 ];
 
 const ProfitsCard = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full bg-bg border border-border rounded-xl p-6 space-y-4 shadow">
       <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold text-text">Profits</h3>
+        <h3 className="text-lg font-semibold text-text">
+          {t("profits.title")}
+        </h3>
         <button className="flex items-center gap-1 px-3 py-1 text-sm bg-transparent text-blue-800 font-bold border border-border rounded">
-          Weekly <IoChevronDownSharp />
+          {t("profits.range")} <IoChevronDownSharp />
         </button>
       </div>
 
@@ -81,7 +85,7 @@ const ProfitsCard = () => {
             <FaArrowUp />
           </div>
           <div>
-            <p className="text-xs text-text">Income</p>
+            <p className="text-xs text-text">{t("profits.income")}</p>
             <p className="font-bold text-text">$12,890.00</p>
           </div>
         </div>
@@ -90,7 +94,7 @@ const ProfitsCard = () => {
             <FaArrowDown />
           </div>
           <div>
-            <p className="text-xs text-text">Expense</p>
+            <p className="text-xs text-text">{t("profits.expense")}</p>
             <p className="font-bold text-text">$12,890.00</p>
           </div>
         </div>

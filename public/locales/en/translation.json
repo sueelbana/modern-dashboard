@@ -90,5 +90,299 @@
         "time": "2 hours ago"
       }
     ]
+  },
+    "email": {
+    "title": "Email",
+    "new_mail_button": "+ New Mail",
+    "folders": {
+      "inbox": "Inbox",
+      "sent": "Sent",
+      "favorite": "Favorite",
+      "draft": "Draft",
+      "important": "Important",
+      "scheduled": "Scheduled",
+      "more": "More"
+    },
+    "categories": {
+      "title": "Categories",
+      "work": "Work",
+      "side_projects": "Side Projects",
+      "add": "Add Categories"
+    }
+  },
+      "emailList": {
+    "titles": {
+      "item1": "Daily Meeting Schedule with Stakeholders",
+      "item2": "Weekly Server Maintenance",
+      "item3": "Design Newsletter",
+      "item4": "Your Daily Booster",
+      "item5": "Weekly Report",
+      "item6": "Project Management Newsletter"
+    },
+    "previews": {
+      "item1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...",
+      "item2": "Our servers will undergo routine maintenance this weekend. Expect possible downtime between 1–3 AM.",
+      "item3": "Get the latest updates in design trends, tutorials, and community highlights in our newest newsletter.",
+      "item4": "Boost your productivity with our daily tips, tricks, and curated tools delivered right to your inbox.",
+      "item5": "Your weekly performance report is ready—click to view stats, charts, and actionable insights.",
+      "item6": "Stay on top of your projects with our management newsletter, featuring templates and best practices."
+    },
+    "hoursAgo_one": "{{count}}h ago",
+    "hoursAgo_other": "{{count}}h ago",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "search_placeholder": "Search here...",
+    "today": "Today",
+    "more_options": "More options"
+  },
+    "preview": {
+    "title": "Preview",
+    "inbox": "Inbox",
+    "important": "Important",
+    "subject_line1": "Daily Meeting Schedule with",
+    "subject_line2": "Stakeholders",
+    "date": "{{date}} {{time}}",
+    "sender": {
+      "name": "Tony Soap",
+      "email": "soap@gmail.com"
+    },
+    "recipient": "Nella",
+    "greeting": "Hi {{name}},",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "signature": "Regards",
+    "signatureName": "Samantha",
+    "compose_placeholder": "Write your message here...",
+    "send": "Send"
+  },
+    "contactPage": {
+    "title": "Contact"
+  },
+    "contact": {
+    "position_default": "Central Usability Officer",
+    "mark_favorite": "Mark as favorite",
+    "more_options": "More options",
+    "email": "Send email",
+    "call": "Make a call",
+    "message": "Send a message",
+    "people": {
+      "johnny": "Johnny Ahmad",
+      "samantha": "Samantha William",
+      "nadila": "Nadila Adja",
+      "tony": "Tony Soap",
+      "karen": "Karen Hope",
+      "jack": "Jack Gallen",
+      "jordan": "Jordan Nico",
+      "johndoe": "John Doe",
+      "vega": "Vega D.",
+      "colj": "Col J. Lays",
+      "vergo": "Vergo Vergana",
+      "angelina": "Angelina Crispy"
+      }
+  },
+  "recentTrading": {
+    "title": "Recent Trading",
+    "price": "${{value}}",
+    "time_today": "Today, 12:30 AM"
+  },
+  "crypto": {
+    "tokens": {
+      "bitcoin": "Bitcoin",
+      "ethereum": "Ethereum",
+      "litecoin": "Litecoin",
+      "ripple": "Ripple"
+    },
+    "title": "Crypto",
+    "symbols": {
+      "bitcoin": "BTC",
+      "ethereum": "ETH",
+      "litecoin": "LTC",
+      "ripple": "RPL"
+    },
+    "intervals": {
+      "D": "D",
+      "W": "W",
+      "M": "M"
+    },
+    "price": "${{value}}",
+    "rate": "{{value}}",
+    "compare": "Compare",
+    "options": "More options"
+  },
+    "marketCard": {
+    "currency": "USD",
+    "price": "${{value}}"
+  },
+    "marketActivity": {
+    "title": "Market Activity",
+    "filter": {
+      "month": "Month",
+      "week": "Week",
+      "year": "Year"
+    },
+    "series": {
+      "thisMonth": "This Month",
+      "lastMonth": "Last Month"
+    }
+  },
+    "buysell": {
+    "title": "Buy & Sell",
+    "buy": "Buy",
+    "sell": "Sell",
+    "choose_currency": "Choose Currency",
+    "amount": "Amount",
+    "insert_amount": "Insert amount",
+    "confirm": "Confirm"
+  },
+  "currencies": {
+    "bitcoin": "Bitcoin",
+    "ethereum": "Ethereum",
+    "litecoin": "Litecoin",
+    "ripple": "Ripple"
+  },
+    "summary": {
+    "title": "Summary",
+    "percent": "{{value}}%"
+  },
+    "profitExp": {
+    "title": "Profit",
+    "income": "Income",
+    "expense": "Expense",
+    "amount": "${{value}}"
+  },
+    "kanban": {
+    "title": "Kanban",
+    "project": "Project #1",
+    "board": "Board",
+    "private": "Private",
+    "todo": "To Do",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "review": "Review",
+    "revision": "Revision",
+    "addCard": "Add card"
+  },
+    "kanbanCard": {
+    "title1": "Design",
+    "title2": "Development",
+    "title3": "Research",
+    "title4": "Research",
+    "title5": "Deployment",
+    "title6": "Update",
+    "title7": "Documentation",
+    "desc1": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur.",
+    "desc2": "Ab sit asperiores architecto repudiandae.",
+    "desc3": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur.",
+    "desc4": "Ab sit asperiores architecto repudiandae.",
+    "desc5": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur.",
+    "desc6": "Ab sit asperiores architecto repudiandae.",
+    "desc7": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur."
+  },
+    "invoicing": {
+    "title": "Invoicing",
+    "sent": "Sent",
+    "pending": "Pending",
+    "unpaid": "Unpaid",
+    "paid": "Paid",
+    "percentage": "+15%"
+  },
+    "invoice": {
+    "latest_invoice": "Latest Invoice",
+    "status": {
+      "paid": "Paid",
+      "unpaid": "Unpaid"
+    }
+  },
+    "invoice_table": {
+    "invoice_id": "Invoice ID",
+    "date": "Date",
+    "amount": "Amount",
+    "due_date": "Due Date",
+    "status": "Status"
+  },
+    "card": {
+    "title": "My Card",
+    "nameLabel": "Name",
+    "balanceLabel": "Balance"
+  },
+  "invoices": {
+    "title": "Send Invoices",
+    "tabs": {
+      "important": "Important",
+      "socials": "Socials"
+    },
+    "selectRecipient": "Select from list",
+    "placeholder": {
+      "amount": "Insert amount",
+      "reference": "Enter reference here"
+    },
+    "confirm": "Confirm"
+  },
+    "banking": {
+    "title": "Banking",
+    "myCard": "My Card",
+    "quickTransfer": "Quick Transfer"
+  },
+    "quickTransfer": {
+    "amount": "Amount",
+    "transfer": "Transfer"
+  },
+    "profits": {
+    "title": "Profits",
+    "range": "Weekly",
+    "income": "Income",
+    "expense": "Expense"
+  },
+    "transactions": {
+    "title": "Latest Transaction",
+    "view_all": "View all",
+    "toHeaven": "To Heaven Studio",
+    "subscription": "Monthly Subscription",
+    "groceries": "Groceries",
+    "iconStudio": "Icon Studio",
+    "payment": "Payment",
+    "service": "Service"
+  },
+    "savings": {
+    "title": "Savings",
+    "house": "Buying House",
+    "gaming": "Gaming Setup"
+  },
+    "ticketing": {
+    "title": "Ticketing",
+    "ticket_solds": "Ticket Sold",
+    "ticket_refund": "Ticket Refund",
+    "total_sold": "Total Sold",
+    "target_sold": "Target Sold",
+    "compared_to_last_month": "than last month",
+    "view_more": "View more"
+  },
+  "latest_transaction": {
+    "title": "Latest Transaction",
+    "view_all": "View all",
+    "pending": "Pending",
+    "completed": "Completed",
+    "title_music_event": "Music Event",
+    "title_anime_music_event": "Anime Music Event",
+    "title_home_decor_event": "Home Decor Event",
+    "title_food_festival": "Food Festival",
+    "title_tech_seminar": "Tech Seminar"
+  },
+    "today_schedule": {
+    "today": "Today",
+    "date": "Thursday, 10th April, 2021",
+
+    "web_design": "Web Design Webinar",
+    "web_design_desc": "Learn the essentials of modern web design and user interface.",
+
+    "food_festival": "Food Festival",
+    "food_festival_desc": "Experience different cuisines and meet local chefs in this vibrant festival.",
+
+    "tech_seminar": "Tech Seminar",
+    "tech_seminar_desc": "Insights into the latest technology trends and innovations.",
+
+    "music_event": "Music Event",
+    "music_event_desc": "Enjoy live performances from various artists and bands."
   }
 }

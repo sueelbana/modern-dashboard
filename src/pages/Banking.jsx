@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import QuickTransfer from "../components/QuickTransfer";
 import cardImage from "../assets/my-card.jpg";
 import ProfitsCard from "../components/ProfitsCard";
@@ -14,21 +15,27 @@ const MyCardSection = () => (
 );
 
 const Banking = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold text-text mb-6">Banking</h2>
+      <h2 className="text-2xl font-semibold text-text mb-6">
+        {t("banking.title")}
+      </h2>
 
       {/* My Card & Quick Transfer + Profits Card */}
       <div className="flex flex-col lg:flex-row gap-6 items-stretch">
         {/* MyCard + QuickTransfer container */}
         <div className="bg-bg border border-border rounded-xl p-6 flex flex-col lg:flex-row gap-6 w-full lg:w-2/3">
           <div className="w-full lg:w-1/2">
-            <h3 className="font-semibold text-lg text-text mb-4">My Card</h3>
+            <h3 className="font-semibold text-lg text-text mb-4">
+              {t("banking.myCard")}
+            </h3>
             <MyCardSection />
           </div>
           <div className="w-full lg:w-1/2">
             <h3 className="font-semibold text-lg text-text mb-4">
-              Quick Transfer
+              {t("banking.quickTransfer")}
             </h3>
             <QuickTransfer />
           </div>

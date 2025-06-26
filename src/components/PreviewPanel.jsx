@@ -9,12 +9,16 @@ import {
   FaImage,
   FaPaperPlane,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const PreviewPanel = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="w-[350px] h-full min-h-[calc(100vh-4rem)] overflow-y-auto preview-panel p-6 text-gray-700">
+      {/* Header */}
       <div className="flex justify-between items-center mb-4">
-        <span className="font-bold">Preview</span>
+        <span className="font-bold">{t("preview.title")}</span>
         <div className="flex space-x-2">
           <button className="p-2 rounded hover:bg-gray-200 text-gray-500 transition">
             <FaTrash />
@@ -28,49 +32,59 @@ const PreviewPanel = () => {
         </div>
       </div>
 
-      <span className="text-sm text-text">Inbox</span>
+      {/* Folder */}
+      <span className="text-sm text-text-secondary">{t("preview.inbox")}</span>
 
+      {/* Actions */}
       <div className="flex items-center space-x-3 my-3">
         <button className="flex items-center px-3 py-1 text-sm text-white bg-yellow-400 rounded-full font-semibold">
-          <span className="mr-1">➤</span> Important
+          <span className="mr-1">➤</span> {t("preview.important")}
         </button>
         <FaStar className="text-gray-300" />
         <FaInfoCircle className="text-gray-300" />
       </div>
 
+      {/* Subject */}
       <h2 className="text-lg font-bold text-text leading-tight mb-1">
-        Daily Meeting Schedule with
-        <br /> Stakeholders
+        {t("preview.subject_line1")}
+        <br />
+        {t("preview.subject_line2")}
       </h2>
-      <p className="text-sm text-text mb-4">Today, March 30th 2021 06:45 PM</p>
 
+      {/* Date */}
+      <p className="text-sm text-text-secondary mb-4">
+        {t("preview.date", { date: "March 30th 2021", time: "06:45 PM" })}
+      </p>
+
+      {/* Sender Info */}
       <div className="flex items-center space-x-3 mb-3">
         <div className="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-text font-bold">
           T
         </div>
         <div>
-          <div className="font-semibold text-sm text-text">Tony Soap</div>
-          <div className="text-xs text-text">soap@gmail.com</div>
+          <div className="font-semibold text-sm text-text">
+            {t("preview.sender.name")}
+          </div>
+          <div className="text-xs text-text-secondary">
+            {t("preview.sender.email")}
+          </div>
         </div>
       </div>
 
+      {/* Body */}
       <div className="text-sm leading-relaxed mb-4">
-        <p>Hi Nella,</p>
-        <p className="mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p>{t("preview.greeting", { name: t("preview.recipient") })}</p>
+        <p className="mt-2">{t("preview.body")}</p>
         <p className="mt-4">
-          Regards,
-          <br />
-          Samantha
+          {t("preview.signature")},<br />
+          {t("preview.signatureName")}
         </p>
       </div>
 
-      {/* Message Input Area */}
+      {/* Compose */}
       <div className="border rounded-lg p-3 bg-bg">
         <textarea
-          placeholder="Write your message here..."
+          placeholder={t("preview.compose_placeholder")}
           className="w-full border-none resize-none bg-bg focus:outline-none text-sm"
           rows={3}
         />
@@ -84,6 +98,7 @@ const PreviewPanel = () => {
         </div>
       </div>
 
+      {/* Footer */}
       <div className="flex justify-between items-center mt-3 px-1">
         <div className="flex space-x-2 text-gray-500">
           <button className="p-2 rounded hover:bg-gray-200 transition">
@@ -93,9 +108,8 @@ const PreviewPanel = () => {
             <FaImage />
           </button>
         </div>
-
         <button className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold shadow">
-          <FaPaperPlane className="mr-2" /> Send
+          <FaPaperPlane className="mr-2" /> {t("preview.send")}
         </button>
       </div>
     </div>

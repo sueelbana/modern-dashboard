@@ -1,14 +1,15 @@
 import { FiMoreHorizontal } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const savings = [
   {
-    title: "Buying House",
+    titleKey: "savings.house",
     amountSaved: 16500,
     goal: 10000,
     color: "purple",
   },
   {
-    title: "Gaming Setup",
+    titleKey: "savings.gaming",
     amountSaved: 16500,
     goal: 10000,
     color: "yellow",
@@ -16,9 +17,11 @@ const savings = [
 ];
 
 const SavingsCard = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-bg p-6 rounded-xl w-full max-w-md">
-      <h3 className="text-lg font-bold text-text mb-4">Savings</h3>
+      <h3 className="text-lg font-bold text-text mb-4">{t("savings.title")}</h3>
 
       <div className="space-y-4">
         {savings.map((item, idx) => {
@@ -49,7 +52,7 @@ const SavingsCard = () => {
                     <span className="w-1.5 h-1.5 rounded-full bg-bg"></span>
                   </span>
                   <span className="text-sm font-medium text-text">
-                    {item.title}
+                    {t(item.titleKey)}
                   </span>
                 </div>
                 <button>

@@ -1,9 +1,12 @@
 import React from "react";
 import { FaPlus, FaArrowRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const users = ["Tony", "Karen", "Jordan"];
 
 const QuickTransfer = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="border border-border rounded-xl p-6 space-y-6">
       <div className="flex items-center gap-4">
@@ -14,19 +17,18 @@ const QuickTransfer = () => {
           </div>
         ))}
 
-        {/* Plus icon as a button with aligned layout */}
+        {/* Plus icon */}
         <div className="text-center">
           <button className="w-10 h-10 bg-indigo-600 rounded mb-1 mx-auto flex items-center justify-center text-white">
             <FaPlus className="text-sm" />
           </button>
-          <p className="text-xs text-transparent font-semibold">+</p>{" "}
-          {/* Keeps vertical alignment */}
+          <p className="text-xs text-transparent font-semibold">+</p>
         </div>
       </div>
 
       {/* Amount Input */}
       <div>
-        <label className="text-sm text-text">Amount</label>
+        <label className="text-sm text-text">{t("quickTransfer.amount")}</label>
         <input
           type="text"
           value="$100"
@@ -37,7 +39,7 @@ const QuickTransfer = () => {
 
       {/* Transfer Button */}
       <button className="w-full bg-indigo-600 text-white py-2 rounded font-semibold flex items-center justify-center gap-2">
-        Transfer <FaArrowRight className="text-xs" />
+        {t("quickTransfer.transfer")} <FaArrowRight className="text-xs" />
       </button>
     </div>
   );

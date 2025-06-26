@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import KanbanColumn from "./KanbanColumn";
+import { useTranslation } from "react-i18next";
 
 import {
   DndContext,
@@ -14,54 +15,55 @@ import {
 } from "@dnd-kit/sortable";
 
 const initialData = {
-  "To-do": [
+  todo: [
     {
       id: "1",
-      title: "Design",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title1",
+      descKey: "kanbanCard.desc1",
     },
     {
       id: "2",
-      title: "Development",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title2",
+      descKey: "kanbanCard.desc2",
     },
   ],
-  "In-Progress": [
+  inProgress: [
     {
       id: "3",
-      title: "Design",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title3",
+      descKey: "kanbanCard.desc3",
     },
   ],
-  Completed: [
+  completed: [
     {
       id: "4",
-      title: "Research",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title4",
+      descKey: "kanbanCard.desc4",
     },
     {
       id: "5",
-      title: "Development",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title5",
+      descKey: "kanbanCard.desc5",
     },
   ],
-  Review: [
+  review: [
     {
       id: "6",
-      title: "Design",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title6",
+      descKey: "kanbanCard.desc6",
     },
     {
       id: "7",
-      title: "Research",
-      desc: "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+      titleKey: "kanbanCard.title7",
+      descKey: "kanbanCard.desc7",
     },
   ],
-  Revision: [],
+  revision: [],
 };
 
 const KanbanBoard = () => {
   const [columns, setColumns] = useState(initialData);
+  const { t } = useTranslation();
 
   const sensors = useSensors(useSensor(PointerSensor));
 
@@ -105,13 +107,13 @@ const KanbanBoard = () => {
       onDragEnd={handleDragEnd}
     >
       <div className="flex overflow-x-auto gap-6 p-4">
-        {Object.entries(columns).map(([title, items]) => (
+        {Object.entries(columns).map(([key, items]) => (
           <SortableContext
-            key={title}
+            key={key}
             items={items}
             strategy={verticalListSortingStrategy}
           >
-            <KanbanColumn title={title} items={items} />
+            <KanbanColumn title={t(`kanban.${key}`)} items={items} />
           </SortableContext>
         ))}
       </div>
