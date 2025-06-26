@@ -1,0 +1,94 @@
+{
+  "topnav": {
+    "search_placeholder": "Search here...",
+    "theme_toggle": "Toggle Dark Mode",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "admin": "Admin"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "projects": "Projects",
+    "side_projects": "Side Projects",
+    "investment": "Investment",
+    "assets": "Assets"
+  },
+    "visitors_card": {
+    "title": "Visitors"
+  },
+    "customers": {
+    "total": "Total Customers",
+    "new": "New User",
+    "growth": "Growth",
+    "period": "Period",
+    "periods": {
+      "month": "Month",
+      "quarter": "Quarter",
+      "year": "Year"
+    }
+  },
+    "userstats": {
+    "profile": "User Profile",
+    "gender": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "statistic": "Statistic",
+    "weekly": "Weekly",
+    "this_week": "This Week",
+    "last_week": "Last Week",
+    "impression": "Impression",
+    "than_last_year": "than last year"
+  },
+    "userreviews": {
+    "title": "User Reviews",
+    "comment1": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+    "comment2": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+    "comment3": "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+    "view_more": "View more reviews"
+  },
+    "server": {
+    "title": "Server Status",
+    "country": "Country",
+    "country_value": "Indonesia",
+    "domain": "Domain",
+    "domain_value": "website.com",
+    "speed": "Speed",
+    "speed_value": "2.0 mbps"
+  },
+    "contacts": {
+    "title": "Contacts",
+    "view_all": "View All"
+  },
+    "messages": {
+    "title": "Messages",
+    "view_all": "View All"
+  },
+    "recentActivity": {
+    "title": "Recent Activity",
+    "buttons": {
+      "activity": "Activity",
+      "update": "Update"
+    },
+    "items": [
+      {
+        "label": "Transaction Assets",
+        "time": "2 hours ago"
+      },
+      {
+        "label": "New Credit Register",
+        "time": "2 hours ago"
+      },
+      {
+        "label": "Transaction Assets",
+        "time": "2 hours ago"
+      },
+      {
+        "label": "New Credit Register",
+        "time": "2 hours ago"
+      }
+    ]
+  }
+}

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { FaSearch, FaBell, FaRegCommentDots, FaCog } from "react-icons/fa";
-import { FaSun, FaMoon } from "react-icons/fa"; // for theme toggle
+import { FaSun, FaMoon } from "react-icons/fa";
 import avatar from "../assets/avatar.jpg";
 import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const TopNavbar = () => {
+  const { t } = useTranslation();
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
@@ -27,7 +30,7 @@ const TopNavbar = () => {
         <FaSearch className="text-primary" />
         <input
           type="text"
-          placeholder="Search here..."
+          placeholder={t("topnav.search_placeholder")}
           className="bg-border w-full text-sm text-text-secondary placeholder:text-text-secondary"
         />
       </div>
@@ -40,13 +43,16 @@ const TopNavbar = () => {
         <button
           onClick={toggleTheme}
           className="p-2 rounded-lg bg-primary text-white hover:opacity-90 transition"
-          title="Toggle Dark Mode"
+          title={t("topnav.theme_toggle")}
         >
           {theme === "dark" ? <FaSun size={16} /> : <FaMoon size={16} />}
         </button>
 
         {/* Messages Icon */}
-        <div className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer">
+        <div
+          className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer"
+          title={t("topnav.messages")}
+        >
           <FaRegCommentDots className="text-text-secondary text-xl" />
           <span className="absolute -top-1 -right-1 w-4 h-4 text-xs bg-primary text-white rounded-full flex items-center justify-center">
             2
@@ -54,7 +60,10 @@ const TopNavbar = () => {
         </div>
 
         {/* Notifications Icon */}
-        <div className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer">
+        <div
+          className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer"
+          title={t("topnav.notifications")}
+        >
           <FaBell className="text-text-secondary text-xl" />
           <span className="absolute -top-1 -right-1 w-4 h-4 text-xs bg-primary text-white rounded-full flex items-center justify-center">
             2
@@ -62,7 +71,10 @@ const TopNavbar = () => {
         </div>
 
         {/* Settings Icon */}
-        <div className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer">
+        <div
+          className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer"
+          title={t("topnav.settings")}
+        >
           <FaCog className="text-text-secondary text-xl" />
         </div>
 
@@ -75,7 +87,7 @@ const TopNavbar = () => {
           />
           <div className="text-sm">
             <div className="font-semibold text-text">Zara Wardani</div>
-            <div className="text-text-secondary">Admin</div>
+            <div className="text-text-secondary">{t("topnav.admin")}</div>
           </div>
         </div>
       </div>

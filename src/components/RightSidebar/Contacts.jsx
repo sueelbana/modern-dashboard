@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const contacts = [
   { name: "Tony", img: "/avatars/tony.jpg" },
@@ -12,11 +13,15 @@ const contacts = [
 ];
 
 const Contacts = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-6">
       <div className="flex justify-between items-center mb-2">
-        <h3 className="font-semibold">Contacts</h3>
-        <a href="#" className="text-xs text-blue-500">View All</a>
+        <h3 className="font-semibold text-text">{t("contacts.title")}</h3>
+        <a href="#" className="text-xs text-blue-500">
+          {t("contacts.view_all")}
+        </a>
       </div>
       <div className="grid grid-cols-4 gap-3">
         {contacts.map((contact, index) => (

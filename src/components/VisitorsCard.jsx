@@ -6,8 +6,8 @@ import {
   ResponsiveContainer,
   Area,
   AreaChart,
-  Dot,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { name: "Day 1", value: 12 },
@@ -37,10 +37,14 @@ const CustomDot = (props) => {
 };
 
 export default function VisitorsCard() {
+  const { t } = useTranslation();
+
   return (
     <div className="p-4 rounded-lg border border-border bg-bg">
       <div className="flex justify-between items-center">
-        <div className="text-sm font-bold text-text">Visitors</div>
+        <div className="text-sm font-bold text-text">
+          {t("visitors_card.title")}
+        </div>
         <div className="text-2xl font-bold text-text">345,678</div>
       </div>
       <ResponsiveContainer width="100%" height={100}>

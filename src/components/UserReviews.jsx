@@ -1,24 +1,22 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const reviews = [
   {
     name: "Belle Epoque",
     rating: 4,
-    comment:
-      "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+    commentKey: "userreviews.comment1",
   },
   {
     name: "Nagita Almania",
     rating: 4,
-    comment:
-      "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+    commentKey: "userreviews.comment2",
   },
   {
     name: "Esmeralda Striff",
     rating: 4,
-    comment:
-      "Sed eligendi facere repellendus. Ipsam ipsam incidunt minima harum tenetur. Ab sit asperiores architecto repudiandae.",
+    commentKey: "userreviews.comment3",
   },
 ];
 
@@ -35,9 +33,13 @@ const StarRating = ({ rating }) => {
 };
 
 export default function UserReviews() {
+  const { t } = useTranslation();
+
   return (
     <div className="mt-12 px-4">
-      <h3 className="text-lg font-semibold mb-4 text-text">User Reviews</h3>
+      <h3 className="text-lg font-semibold mb-4 text-text">
+        {t("userreviews.title")}
+      </h3>
       <div className="flex items-center space-x-4">
         {reviews.map((review, index) => (
           <div
@@ -49,11 +51,14 @@ export default function UserReviews() {
               <span className="font-bold text-text">{review.name}</span>
             </div>
             <p className="text-sm text-text-secondary leading-relaxed">
-              {review.comment}
+              {t(review.commentKey)}
             </p>
           </div>
         ))}
-        <button className="p-2 rounded-full bg-bg border border-border shadow-sm">
+        <button
+          className="p-2 rounded-full bg-bg border border-border shadow-sm"
+          aria-label={t("userreviews.view_more")}
+        >
           <ArrowRight className="w-5 h-5 text-purple-600" />
         </button>
       </div>

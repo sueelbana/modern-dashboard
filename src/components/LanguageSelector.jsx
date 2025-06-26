@@ -1,23 +1,27 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import flag from "../assets/flag.jpg"; 
+import flag from "../assets/flag.jpg";
+import i18n from "../i18n"; // ✅ Correct import
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState({
     label: "English (US)",
     img: flag,
+    code: "en",
   });
 
   const languages = [
-    { label: "English (US)", img: flag },
-    { label: "Arabic (AR)", img: "https://flagcdn.com/w40/eg.png" },
-    { label: "French (FR)", img: "https://flagcdn.com/w40/fr.png" },
+    { label: "English (US)", img: flag, code: "en" },
+    { label: "Arabic (AR)", img: "https://flagcdn.com/w40/eg.png", code: "ar" },
+    { label: "French (FR)", img: "https://flagcdn.com/w40/fr.png", code: "fr" },
   ];
 
   const handleSelect = (lang) => {
     setSelectedLang(lang);
     setIsOpen(false);
+    i18n.changeLanguage(lang.code); // ✅ Ensure i18n is correctly imported
+    document.documentElement.dir = lang.code === "ar" ? "rtl" : "ltr"; // 👈 For direction switch
   };
 
   return (
@@ -26,7 +30,11 @@ const LanguageSelector = () => {
         className="flex items-center gap-2 px-3 py-1.5 bg-bg border rounded-full shadow-sm text-sm text-text cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <img src={selectedLang.img} alt="flag" className="w-5 h-5 rounded-full" />
+        <img
+          src={selectedLang.img}
+          alt="flag"
+          className="w-5 h-5 rounded-full"
+        />
         {selectedLang.label}
         <FaChevronDown className="text-xs" />
       </div>

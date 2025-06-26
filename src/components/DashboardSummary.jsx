@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaFolder, FaDollarSign, FaCubes } from "react-icons/fa";
 import VisitorsCard from "./VisitorsCard";
 import CustomersBarChart from "./CustomersBarChart";
@@ -16,39 +17,42 @@ const Card = ({ icon, label, value, iconColor }) => (
 );
 
 const DashboardSummary = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="p-6 bg-bg min-h-screen">
-      <h2 className="text-xl font-bold mb-5 text-text">Dashboard</h2>
+      <h2 className="text-xl font-bold mb-5 text-text">
+        {t("dashboard.title")}
+      </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <div className="grid grid-cols-2 gap-6 col-span-2">
           <Card
             icon={<FaBriefcase />}
-            label="Projects"
+            label={t("dashboard.projects")}
             value="932"
             iconColor="text-blue-600"
           />
           <Card
             icon={<FaFolder />}
-            label="Side Projects"
+            label={t("dashboard.side_projects")}
             value="932"
             iconColor="text-yellow-500"
           />
           <Card
             icon={<FaDollarSign />}
-            label="Investment"
+            label={t("dashboard.investment")}
             value="932"
             iconColor="text-orange-500"
           />
           <Card
             icon={<FaCubes />}
-            label="Assets"
+            label={t("dashboard.assets")}
             value="932"
             iconColor="text-sky-500"
           />
         </div>
 
-        {/* Visitors card fills third column */}
         <div className="w-full">
           <VisitorsCard />
         </div>

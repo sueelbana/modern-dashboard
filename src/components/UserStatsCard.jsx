@@ -13,11 +13,12 @@ import {
   Bar,
   ResponsiveContainer,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const pieData = [
-  { name: "Male", value: 100, color: "#6C5DD3" },
-  { name: "Female", value: 50, color: "#FBBF24" },
-  { name: "Other", value: 50, color: "#FB923C" },
+  { name: "male", value: 100, color: "#6C5DD3" },
+  { name: "female", value: 50, color: "#FBBF24" },
+  { name: "other", value: 50, color: "#FB923C" },
 ];
 
 const lineData = [
@@ -40,10 +41,15 @@ const barData = [
 ];
 
 export default function UserStatsCard() {
+  const { t } = useTranslation();
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 mt-10">
+      {/* Pie section */}
       <div className="bg-bg p-4 rounded-xl shadow-sm border border-border w-[250px]">
-        <h3 className="text-md font-semibold mb-4 text-text">User Profile</h3>
+        <h3 className="text-md font-semibold mb-4 text-text">
+          {t("userstats.profile")}
+        </h3>
         <ResponsiveContainer width="100%" height={200}>
           <PieChart>
             <Pie
@@ -69,7 +75,7 @@ export default function UserStatsCard() {
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: entry.color }}
                 />
-                {entry.name}
+                {t(`userstats.gender.${entry.name}`)}
               </div>
               <div className="font-bold text-text">{entry.value}%</div>
             </div>
@@ -77,10 +83,13 @@ export default function UserStatsCard() {
         </div>
       </div>
 
+      {/* Line & bar section */}
       <div className="col-span-2 bg-bg p-6 rounded-xl shadow-sm border border-border w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2">
-            <h3 className="text-md font-semibold mb-4 text-text">Statistic</h3>
+            <h3 className="text-md font-semibold mb-4 text-text">
+              {t("userstats.statistic")}
+            </h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={lineData}>
                 <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
@@ -106,20 +115,26 @@ export default function UserStatsCard() {
           </div>
 
           <div>
-            <h3 className="text-md font-semibold mb-4 text-text">Weekly</h3>
+            <h3 className="text-md font-semibold mb-4 text-text">
+              {t("userstats.weekly")}
+            </h3>
             <div className="mb-4 space-y-2 text-sm">
               <div className="flex justify-between font-medium">
-                <span className="text-text-secondary">This Week</span>
+                <span className="text-text-secondary">
+                  {t("userstats.this_week")}
+                </span>
                 <span className="text-[#6C5DD3] font-bold">+ 20%</span>
               </div>
               <div className="flex justify-between font-medium">
-                <span className="text-text-secondary">Last Week</span>
+                <span className="text-text-secondary">
+                  {t("userstats.last_week")}
+                </span>
                 <span className="text-[#FBBF24] font-bold">+ 13%</span>
               </div>
             </div>
 
             <h4 className="text-sm font-semibold mt-4 mb-1 text-text">
-              Impression
+              {t("userstats.impression")}
             </h4>
             <ResponsiveContainer width="110%" height={100}>
               <BarChart data={barData} barCategoryGap={10}>
@@ -134,7 +149,7 @@ export default function UserStatsCard() {
             <div className="flex justify-between text-sm mt-2">
               <span className="font-bold text-text">12.345</span>
               <span className="text-green-500 text-xs">
-                5.4% than last year
+                5.4% {t("userstats.than_last_year")}
               </span>
             </div>
           </div>
