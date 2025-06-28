@@ -8,12 +8,10 @@ const MarketCard = ({ title, price, data, strokeColor, gradientId, isUp }) => {
 
   return (
     <div className="bg-bg border border-border rounded-xl p-4 w-full max-w-[200px] min-w-[170px]">
-      {/* Title + Currency */}
       <div className="text-xs text-text font-medium mb-1">
         {title} <span className="mx-1">↔</span> {t("marketCard.currency")}
       </div>
 
-      {/* Price + Change */}
       <div className="flex items-center gap-2 mb-2">
         <span className="text-lg font-bold text-text">
           {t("marketCard.price", { value: price })}
@@ -25,7 +23,6 @@ const MarketCard = ({ title, price, data, strokeColor, gradientId, isUp }) => {
         )}
       </div>
 
-      {/* Zigzag Area Chart */}
       <div className="h-16 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart

@@ -9,7 +9,6 @@ const RightCardSidebar = () => {
 
   return (
     <div className="w-80 preview-panel border-l border-border p-6 space-y-6">
-      {/* Card Section */}
       <div>
         <h3 className="font-semibold text-text mb-4">{t("card.title")}</h3>
         <div className="w-full rounded-xl p-4 text-white bg-gradient-to-tr from-indigo-500 via-purple-500 to-yellow-400 shadow-lg">
@@ -27,11 +26,9 @@ const RightCardSidebar = () => {
         </div>
       </div>
 
-      {/* Send Invoices */}
       <div>
         <h3 className="font-semibold text-text mb-4">{t("invoices.title")}</h3>
 
-        {/* Tabs */}
         <div className="flex border-b text-sm mb-4">
           <button
             onClick={() => setActiveTab("Important")}
@@ -55,9 +52,7 @@ const RightCardSidebar = () => {
           </button>
         </div>
 
-        {/* Form */}
         <div className="space-y-4 text-sm">
-          {/* Recipient Dropdown */}
           <div className="relative">
             <select className="w-full border-border rounded px-4 py-2 text-text appearance-none table">
               <option>{t("invoices.selectRecipient")}</option>
@@ -65,7 +60,6 @@ const RightCardSidebar = () => {
             <IoChevronDownSharp className="absolute right-3 top-3 text-gray-400" />
           </div>
 
-          {/* Amount Input */}
           <div className="flex items-center px-3 py-2 border rounded table">
             <FaDollarSign className="text-indigo-600 mr-2" />
             <input
@@ -75,14 +69,12 @@ const RightCardSidebar = () => {
             />
           </div>
 
-          {/* Reference Input */}
           <input
             type="text"
             placeholder={t("invoices.placeholder.reference")}
             className="w-full px-4 py-2 border rounded table text-text"
           />
 
-          {/* Confirm Button */}
           <div className="flex justify-center">
             <button className="w-full py-2 bg-indigo-600 text-white font-semibold rounded">
               {t("invoices.confirm")}

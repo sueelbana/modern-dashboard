@@ -41,7 +41,6 @@ const TransactionList = () => {
         </h3>
       </div>
 
-      {/* Header Row */}
       <div className="grid grid-cols-4 items-center mb-2">
         <div></div>
         <div></div>
@@ -53,14 +52,12 @@ const TransactionList = () => {
         </div>
       </div>
 
-      {/* Transactions */}
       <div className="space-y-4">
         {transactions.map((item, idx) => (
           <div
             key={idx}
             className="grid grid-cols-4 items-center gap-4 text-sm text-text-secondary"
           >
-            {/* Icon + Title */}
             <div className="flex items-center gap-3">
               <div className="bg-primary p-2 rounded-lg text-white">
                 <HiArrowsRightLeft className="w-5 h-5" />
@@ -71,15 +68,12 @@ const TransactionList = () => {
               </div>
             </div>
 
-            {/* Date */}
             <div className="text-center text-xs text-gray-500">{item.date}</div>
 
-            {/* Amount */}
             <div className="text-right font-semibold text-text">
               {item.amount}
             </div>
 
-            {/* Options Button */}
             <div className="text-right">
               <button className="p-2 rounded hover:bg-gray-100 ml-4">
                 <FiMoreHorizontal className="text-gray-400" />

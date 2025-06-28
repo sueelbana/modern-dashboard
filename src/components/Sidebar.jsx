@@ -18,12 +18,10 @@ const Sidebar = () => {
 
   return (
     <aside className="h-full w-20 bg-bg border-r border-border shadow flex flex-col items-center py-6">
-      {/* Logo */}
       <div className="mb-10">
         <img src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
       </div>
 
-      {/* Icons */}
       <nav className="flex flex-col gap-8 items-center">
         <Link to="/">
           <FaHome className={`${iconClass} ${activeClass}`} />

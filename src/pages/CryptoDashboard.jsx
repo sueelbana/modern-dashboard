@@ -59,13 +59,11 @@ const CryptoDashboard = () => {
   const { t } = useTranslation();
   return (
     <div className="flex w-full h-full overflow-hidden bg-bg">
-      {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto p-6 space-y-6 border-r border-border">
         <h2 className="text-2xl font-semibold text-text mb-4">
           {t("crypto.title")}
         </h2>
 
-        {/* Market Cards with Mini Charts */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <MarketCard
             title="BTC"
@@ -112,7 +110,6 @@ const CryptoDashboard = () => {
           <CandleChart />
         </div>
 
-        {/* Market Activity & Buy/Sell */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <MarketActivity />
           <BuySell />

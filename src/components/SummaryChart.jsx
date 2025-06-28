@@ -12,7 +12,6 @@ const rawData = [
 export default function SummaryChart() {
   const { t } = useTranslation();
 
-  // translate the `code` into a display name
   const pieData = rawData.map((entry) => ({
     ...entry,
     name: t(`currencies.${entry.code}`),

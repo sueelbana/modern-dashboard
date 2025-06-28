@@ -1,4 +1,3 @@
-// src/components/CryptoChart.jsx
 import React, { useEffect, useRef } from "react";
 import { createChart, CrosshairMode } from "lightweight-charts";
 
@@ -54,7 +53,6 @@ const CandleChart = () => {
       lineWidth: 1,
     });
 
-    // Dummy data
     const now = Date.now() / 1000;
     const candleData = [];
     const volumeData = [];

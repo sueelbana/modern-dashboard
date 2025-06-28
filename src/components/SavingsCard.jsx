@@ -60,7 +60,6 @@ const SavingsCard = () => {
                 </button>
               </div>
 
-              {/* Progress Bar */}
               <div className="w-full h-2 bg-purple-100 rounded-full overflow-hidden mb-2">
                 <div
                   className={`${color} h-full rounded-full`}
@@ -68,7 +67,6 @@ const SavingsCard = () => {
                 />
               </div>
 
-              {/* Amount Text */}
               <div className="text-right text-sm font-medium">
                 <span
                   className={

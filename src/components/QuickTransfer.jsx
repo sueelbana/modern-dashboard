@@ -17,7 +17,6 @@ const QuickTransfer = () => {
           </div>
         ))}
 
-        {/* Plus icon */}
         <div className="text-center">
           <button className="w-10 h-10 bg-indigo-600 rounded mb-1 mx-auto flex items-center justify-center text-white">
             <FaPlus className="text-sm" />
@@ -26,7 +25,6 @@ const QuickTransfer = () => {
         </div>
       </div>
 
-      {/* Amount Input */}
       <div>
         <label className="text-sm text-text">{t("quickTransfer.amount")}</label>
         <input
@@ -37,7 +35,6 @@ const QuickTransfer = () => {
         />
       </div>
 
-      {/* Transfer Button */}
       <button className="w-full bg-indigo-600 text-white py-2 rounded font-semibold flex items-center justify-center gap-2">
         {t("quickTransfer.transfer")} <FaArrowRight className="text-xs" />
       </button>

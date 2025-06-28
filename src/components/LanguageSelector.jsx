@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import flag from "../assets/flag.jpg";
-import i18n from "../i18n"; // ✅ Correct import
+import i18n from "../i18n";
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +20,8 @@ const LanguageSelector = () => {
   const handleSelect = (lang) => {
     setSelectedLang(lang);
     setIsOpen(false);
-    i18n.changeLanguage(lang.code); // ✅ Ensure i18n is correctly imported
-    document.documentElement.dir = lang.code === "ar" ? "rtl" : "ltr"; // 👈 For direction switch
+    i18n.changeLanguage(lang.code);
+    document.documentElement.dir = lang.code === "ar" ? "rtl" : "ltr";
   };
 
   return (

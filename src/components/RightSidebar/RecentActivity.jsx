@@ -5,7 +5,6 @@ const colorMap = ["bg-indigo-500", "bg-black", "bg-yellow-500", "bg-pink-300"];
 
 const RecentActivity = () => {
   const { t } = useTranslation();
-  // Pull the array of items from your translation JSON
   const items = t("recentActivity.items", { returnObjects: true });
 
   return (

@@ -44,11 +44,9 @@ const Ticketing = () => {
 
   return (
     <div className="p-10 flex flex-col lg:flex-row gap-10">
-      {/* Main Content */}
       <div className="flex-1 flex flex-col gap-10">
         <h2 className="text-2xl text-text mb-6">{t("ticketing.title")}</h2>
 
-        {/* Ticket Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {ticketData.map((item, index) => (
             <div
@@ -79,8 +77,7 @@ const Ticketing = () => {
 
         <LatestTransaction />
       </div>
-
-      {/* Right Sidebar */}
+      
       <TodaySchedule />
     </div>
   );

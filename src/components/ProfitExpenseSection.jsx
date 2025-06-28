@@ -24,10 +24,8 @@ export default function ProfitExpenseSection() {
 
   return (
     <div>
-      {/* Section Title */}
       <h3 className="font-semibold text-text mb-2">{t("profitExp.title")}</h3>
 
-      {/* Profit / Income */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <div className="bg-black p-2 rounded-full">
@@ -45,7 +43,6 @@ export default function ProfitExpenseSection() {
         </BarChart>
       </div>
 
-      {/* Expense */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="bg-black p-2 rounded-full">

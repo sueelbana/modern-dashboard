@@ -16,7 +16,6 @@ const PreviewPanel = () => {
 
   return (
     <div className="w-[350px] h-full min-h-[calc(100vh-4rem)] overflow-y-auto preview-panel p-6 text-gray-700">
-      {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <span className="font-bold">{t("preview.title")}</span>
         <div className="flex space-x-2">
@@ -32,10 +31,8 @@ const PreviewPanel = () => {
         </div>
       </div>
 
-      {/* Folder */}
       <span className="text-sm text-text-secondary">{t("preview.inbox")}</span>
 
-      {/* Actions */}
       <div className="flex items-center space-x-3 my-3">
         <button className="flex items-center px-3 py-1 text-sm text-white bg-yellow-400 rounded-full font-semibold">
           <span className="mr-1">➤</span> {t("preview.important")}
@@ -44,19 +41,16 @@ const PreviewPanel = () => {
         <FaInfoCircle className="text-gray-300" />
       </div>
 
-      {/* Subject */}
       <h2 className="text-lg font-bold text-text leading-tight mb-1">
         {t("preview.subject_line1")}
         <br />
         {t("preview.subject_line2")}
       </h2>
 
-      {/* Date */}
       <p className="text-sm text-text-secondary mb-4">
         {t("preview.date", { date: "March 30th 2021", time: "06:45 PM" })}
       </p>
 
-      {/* Sender Info */}
       <div className="flex items-center space-x-3 mb-3">
         <div className="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-text font-bold">
           T
@@ -71,7 +65,6 @@ const PreviewPanel = () => {
         </div>
       </div>
 
-      {/* Body */}
       <div className="text-sm leading-relaxed mb-4">
         <p>{t("preview.greeting", { name: t("preview.recipient") })}</p>
         <p className="mt-2">{t("preview.body")}</p>
@@ -81,7 +74,6 @@ const PreviewPanel = () => {
         </p>
       </div>
 
-      {/* Compose */}
       <div className="border rounded-lg p-3 bg-bg">
         <textarea
           placeholder={t("preview.compose_placeholder")}
@@ -98,7 +90,6 @@ const PreviewPanel = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="flex justify-between items-center mt-3 px-1">
         <div className="flex space-x-2 text-gray-500">
           <button className="p-2 rounded hover:bg-gray-200 transition">

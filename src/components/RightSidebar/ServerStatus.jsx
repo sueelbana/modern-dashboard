@@ -13,10 +13,8 @@ export default function ServerStatus() {
 
   return (
     <div className="p-4 bg-transparent">
-      {/* Title */}
       <h3 className="text-lg font-bold text-text mb-4">{t("server.title")}</h3>
 
-      {/* Bars */}
       <div className="flex items-end justify-between h-28 mb-6">
         {barHeights.map((height, index) => (
           <div
@@ -27,7 +25,6 @@ export default function ServerStatus() {
         ))}
       </div>
 
-      {/* Info grid */}
       <div className="grid grid-cols-3 text-center text-xs">
         <div>
           <p className="text-text-secondary">{t("server.country")}</p>

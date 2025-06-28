@@ -25,7 +25,6 @@ const TopNavbar = () => {
 
   return (
     <header className="w-full flex items-center justify-between px-6 py-4 bg-bg shadow-sm border-b border-border text-text">
-      {/* Search Bar */}
       <div className="flex items-center gap-2 bg-border px-4 py-2 rounded-xl w-72">
         <FaSearch className="text-primary" />
         <input
@@ -35,11 +34,9 @@ const TopNavbar = () => {
         />
       </div>
 
-      {/* Actions */}
       <div className="flex items-center gap-6">
         <LanguageSelector />
 
-        {/* Theme Toggle Icon */}
         <button
           onClick={toggleTheme}
           className="p-2 rounded-lg bg-primary text-white hover:opacity-90 transition"
@@ -48,7 +45,6 @@ const TopNavbar = () => {
           {theme === "dark" ? <FaSun size={16} /> : <FaMoon size={16} />}
         </button>
 
-        {/* Messages Icon */}
         <div
           className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer"
           title={t("topnav.messages")}
@@ -59,7 +55,6 @@ const TopNavbar = () => {
           </span>
         </div>
 
-        {/* Notifications Icon */}
         <div
           className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer"
           title={t("topnav.notifications")}
@@ -70,7 +65,6 @@ const TopNavbar = () => {
           </span>
         </div>
 
-        {/* Settings Icon */}
         <div
           className="relative hover:bg-hover p-2 rounded-lg transition duration-300 cursor-pointer"
           title={t("topnav.settings")}
@@ -78,7 +72,6 @@ const TopNavbar = () => {
           <FaCog className="text-text-secondary text-xl" />
         </div>
 
-        {/* User Info */}
         <div className="flex items-center gap-3">
           <img
             src={avatar}

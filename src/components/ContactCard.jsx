@@ -12,7 +12,6 @@ const ContactCard = ({ name, positionKey = "contact.position_default" }) => {
   const { t } = useTranslation();
   return (
     <div className="bg-white dark:bg-[#1e192a] rounded-xl shadow p-4 text-center relative">
-      {/* Star Button */}
       <button
         className="absolute top-3 left-3 text-gray-300 hover:text-yellow-400 transition"
         aria-label={t("contact.mark_favorite")}
@@ -20,7 +19,6 @@ const ContactCard = ({ name, positionKey = "contact.position_default" }) => {
         <FaStar />
       </button>
 
-      {/* Ellipsis Button */}
       <button
         className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition"
         aria-label={t("contact.more_options")}

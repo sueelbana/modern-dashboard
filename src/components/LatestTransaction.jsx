@@ -79,7 +79,6 @@ const LatestTransaction = () => {
             key={index}
             className="flex items-center justify-between pb-4"
           >
-            {/* Icon + Title */}
             <div className="flex items-center gap-4 w-[220px]">
               <div className="bg-primary p-2 rounded-lg text-white">
                 <HiArrowsRightLeft className="w-5 h-5" />
@@ -92,12 +91,10 @@ const LatestTransaction = () => {
               </div>
             </div>
 
-            {/* Email */}
             <p className="text-sm text-text-secondary w-[180px]">
               {item.email}
             </p>
 
-            {/* Status */}
             <div className="flex items-center gap-2 w-[120px]">
               <span
                 className={`inline-block w-2.5 h-2.5 rounded-full ${item.statusColor}`}
@@ -107,7 +104,6 @@ const LatestTransaction = () => {
               </span>
             </div>
 
-            {/* File */}
             <a
               href="#"
               className="flex items-center gap-1 text-indigo-600 font-medium text-sm w-[120px]"
@@ -116,12 +112,10 @@ const LatestTransaction = () => {
               {item.file}
             </a>
 
-            {/* Amount */}
             <p className="text-sm font-bold text-text w-[100px] text-right">
               {item.amount}
             </p>
 
-            {/* Options */}
             <MoreHorizontal className="text-gray-400 w-5 h-5 cursor-pointer" />
           </div>
         ))}

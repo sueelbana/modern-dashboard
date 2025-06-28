@@ -47,7 +47,6 @@ const ProfitsCard = () => {
         </button>
       </div>
 
-      {/* Chart */}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={incomeData}>
           <defs>
@@ -78,7 +77,6 @@ const ProfitsCard = () => {
         </AreaChart>
       </ResponsiveContainer>
 
-      {/* Income & Expense */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white">

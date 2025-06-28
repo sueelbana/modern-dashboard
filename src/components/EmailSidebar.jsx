@@ -15,18 +15,15 @@ const EmailSidebar = () => {
 
   return (
     <div className="w-64">
-      {/* Title */}
       <h2 className="text-xl font-semibold text-text mb-4">
         {t("email.title")}
       </h2>
 
       <div className="border border-border rounded-lg p-4 shadow-sm space-y-6 bg-bg">
-        {/* New Mail */}
         <button className="w-full bg-primary text-white py-2 rounded-md font-medium hover:bg-primary/90 transition">
           {t("email.new_mail_button")}
         </button>
 
-        {/* Folder Buttons */}
         <div className="space-y-2">
           <button className="flex items-center justify-between w-full bg-primary/10 text-primary font-medium py-2 px-3 rounded-md hover:bg-primary/20">
             <span className="flex items-center gap-2">
@@ -87,7 +84,6 @@ const EmailSidebar = () => {
           </button>
         </div>
 
-        {/* Categories */}
         <div>
           <h3 className="text-sm font-medium text-text mb-2">
             {t("email.categories.title")}

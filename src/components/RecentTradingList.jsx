@@ -13,13 +13,11 @@ const rawCoins = [
 export default function RecentTradingList() {
   const { t } = useTranslation();
 
-  // Example static values
   const price = 13.9;
   const timeKey = "recentTrading.time_today";
 
   return (
     <div>
-      {/* Localized title */}
       <h3 className="font-semibold text-text mb-4">
         {t("recentTrading.title")}
       </h3>
@@ -34,22 +32,22 @@ export default function RecentTradingList() {
                 {coin.icon}
               </div>
               <div>
-                {/* Localized coin name */}
+
                 <p className="font-medium text-text">
                   {t(`crypto.tokens.${coin.code}`)}
                 </p>
-                {/* Localized symbol (if you need it) */}
+
                 <p className="text-xs text-gray-500">
                   {t(`crypto.symbols.${coin.code}`, { symbol: coin.symbol })}
                 </p>
               </div>
             </div>
             <div className="text-right">
-              {/* Localized price */}
+
               <p className="font-medium text-text">
                 {t("recentTrading.price", { value: price })}
               </p>
-              {/* Localized time */}
+
               <p className="text-xs text-gray-500">
                 {t(timeKey)}
               </p>

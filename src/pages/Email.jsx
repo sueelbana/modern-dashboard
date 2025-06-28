@@ -7,7 +7,6 @@ const Email = () => {
     <div className="flex min-h-screen bg-bg text-text">
       <EmailSidebar />
       <EmailList />
-      {/* Right-side Preview Panel */}
       <div className="ml-1">
         <PreviewPanel />
       </div>

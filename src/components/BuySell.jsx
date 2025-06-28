@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaDollarSign } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useTranslation } from "react-i18next";
-// crypto icons from simple-icons
 import { SiBitcoin, SiEthereum, SiLitecoin, SiRipple } from "react-icons/si";
 
 const currencyConfigs = [
@@ -19,10 +18,8 @@ const BuySell = () => {
 
   return (
     <div className="bg-bg p-4 rounded-lg border border-border">
-      {/* Title */}
       <h3 className="font-semibold text-text mb-4">{t("buysell.title")}</h3>
 
-      {/* Buy/Sell Buttons */}
       <div className="flex items-center gap-2 mb-4">
         <button className="flex-1 py-2 text-sm font-medium bg-primary text-white rounded">
           {t("buysell.buy")}
@@ -32,7 +29,6 @@ const BuySell = () => {
         </button>
       </div>
 
-      {/* Currency Selector */}
       <div className="mb-3">
         <label className="block text-sm text-text font-semibold mb-2">
           {t("buysell.choose_currency")}
@@ -70,7 +66,6 @@ const BuySell = () => {
           )}
         </div>
 
-        {/* Amount Input */}
         <div className="mb-4">
           <label className="block text-sm font-medium text-text mb-1">
             {t("buysell.amount")}
@@ -85,7 +80,6 @@ const BuySell = () => {
           </div>
         </div>
 
-        {/* Confirm Button */}
         <div className="flex justify-center">
           <button className="w-40 py-2 bg-primary text-white font-semibold rounded">
             {t("buysell.confirm")}

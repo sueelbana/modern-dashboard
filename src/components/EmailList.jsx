@@ -4,7 +4,6 @@ import EmailSearchBar from "./EmailSearchBar";
 import EmailItem from "./EmailItem";
 import EmailPagination from "./EmailPagination";
 
-// raw data keys—no hard-coded text here
 const rawEmailData = [
   {
     id: 1,
@@ -48,7 +47,6 @@ export default function EmailList() {
   const { t } = useTranslation();
   const [selectedPage, setSelectedPage] = useState(1);
 
-  // map raw → localized
   const emailData = rawEmailData.map((e) => ({
     id: e.id,
     title: t(e.titleKey),
@@ -58,17 +56,14 @@ export default function EmailList() {
 
   return (
     <div className="flex-1 px-4 py-6 text-text">
-      {/* Search bar with localized placeholder */}
       <EmailSearchBar placeholder={t("emailList.search_placeholder")} />
 
-      {/* List of emails */}
       <div className="space-y-2">
         {emailData.map((email, idx) => (
           <EmailItem key={email.id} email={email} isSelected={idx === 0} />
         ))}
       </div>
 
-      {/* Pagination with localized labels */}
       <EmailPagination
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}

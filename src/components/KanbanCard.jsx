@@ -24,7 +24,6 @@ const KanbanCard = ({ id, titleKey, descKey }) => {
       {...listeners}
       className="bg-bg p-3 rounded-lg shadow text-sm cursor-grab"
     >
-      {/* Title with colored dot */}
       <div className="flex items-center gap-2 mb-1">
         <span className="h-2 w-2 rounded-full bg-blue-500" />
         <strong className="text-text">{t(titleKey)}</strong>
@@ -32,7 +31,6 @@ const KanbanCard = ({ id, titleKey, descKey }) => {
 
       <p className="text-text-secondary text-xs">{t(descKey)}</p>
 
-      {/* Paperclip icon aligned right */}
       <div className="mt-2 flex justify-end">
         <FaPaperclip className="text-gray-400 text-xl" />
       </div>
