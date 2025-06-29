@@ -15,7 +15,7 @@ const PreviewPanel = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-[350px] h-full min-h-[calc(100vh-4rem)] overflow-y-auto preview-panel p-6 text-gray-700">
+    <div className="w-[350px] h-full min-h-[calc(100vh-4rem)] preview-panel p-6 text-gray-700">
       <div className="flex justify-between items-center mb-4">
         <span className="font-bold">{t("preview.title")}</span>
         <div className="flex space-x-2">
@@ -74,14 +74,14 @@ const PreviewPanel = () => {
         </p>
       </div>
 
-      <div className="border rounded-lg p-3 bg-bg">
+      <div className="border rounded-lg p-2 bg-bg w-[260px]">
         <textarea
           placeholder={t("preview.compose_placeholder")}
-          className="w-full border-none resize-none bg-bg focus:outline-none text-sm"
-          rows={3}
+          className="w-full h-[60px] border-none resize-none bg-bg focus:outline-none text-sm placeholder:text-xs placeholder:text-gray-400"
+          rows={2}
         />
         <div className="flex items-center justify-between mt-2">
-          <div className="flex items-center space-x-3 text-gray-500 text-sm">
+          <div className="flex items-center space-x-2 text-gray-500 text-xs">
             <button className="font-bold">B</button>
             <button className="italic">I</button>
             <button className="underline">U</button>

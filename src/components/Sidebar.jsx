@@ -17,7 +17,7 @@ const Sidebar = () => {
   const activeClass = "text-primary";
 
   return (
-    <aside className="h-full w-20 bg-bg border-r border-border shadow flex flex-col items-center py-6">
+    <aside className="min-h-screen w-20 bg-bg border-r border-border flex flex-col items-center py-6">
       <div className="mb-10">
         <img src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
       </div>

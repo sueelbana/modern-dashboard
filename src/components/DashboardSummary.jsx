@@ -20,7 +20,7 @@ const DashboardSummary = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="p-6 bg-bg min-h-screen">
+    <div className="p-6 bg-bg w-full min-h-[calc(100vh-4rem)]">
       <h2 className="text-xl font-bold mb-5 text-text">
         {t("dashboard.title")}
       </h2>

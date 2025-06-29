@@ -102,7 +102,7 @@ const CryptoDashboard = () => {
           />
         </div>
 
-        <div className="p-6">
+        <div className="p-2">
           <CryptoInfoBar />
         </div>
 
@@ -115,7 +115,7 @@ const CryptoDashboard = () => {
           <BuySell />
         </div>
       </div>
-      <div className="w-[300px] border-l border-gray-200 p-4 bg-white overflow-y-auto">
+      <div className="w-[300px] border-border preview-panel">
         <SummarySidebar />
       </div>
     </div>

@@ -4,10 +4,10 @@ import PreviewPanel from "../components/PreviewPanel";
 
 const Email = () => {
   return (
-    <div className="flex min-h-screen bg-bg text-text">
+    <div className="flex w-full h-full overflow-hidden bg-bg">
       <EmailSidebar />
       <EmailList />
-      <div className="ml-1">
+      <div className="w-[330px] border-border preview-panel">
         <PreviewPanel />
       </div>
     </div>

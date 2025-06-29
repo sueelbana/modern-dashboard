@@ -5,7 +5,7 @@ import RecentTradingList from "./RecentTradingList";
 
 const SummarySidebar = () => {
   return (
-    <div className="w-80 bg-bg border-l border-border p-4 space-y-6">
+    <div className="w-68 p-4 space-y-6">
       <SummaryChart />
       <ProfitExpenseSection />
       <RecentTradingList />

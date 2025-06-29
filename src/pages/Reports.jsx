@@ -4,13 +4,14 @@ import RightCardSidebar from "../components/RightCardSidebar";
 
 const Reports = () => {
   return (
-    <div className="flex p-6">
+    <div className="flex w-full h-full overflow-hidden bg-bg">
       <div className="flex-1 pr-6">
         <InvoicingCards />
         <LatestInvoice />
       </div>
-
-      <RightCardSidebar />
+      <div className="w-[320px] border-border preview-panel">
+        <RightCardSidebar />
+      </div>
     </div>
   );
 };

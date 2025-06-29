@@ -24,11 +24,11 @@ html, body, #root {
 }
 
 .dark {
-  --color-bg: #2E293E;
+  --color-bg: rgba(38, 30, 53, 1);
   --color-card: #1F1B4B;
   --color-text: #F3F4F6;
   --color-text-secondary: #A0AEC0;
-  --color-border: #2D2D4D;
+  --color-border: rgba(46, 41, 62, 1);
   --color-hover: #2D2D4D;
 }
 
@@ -65,3 +65,38 @@ html, body, #root {
 .dark .table {
 background-color: rgba(46, 41, 62, 1);
 }
+
+.bar {
+  background-color: rgba(236, 238, 251, 1);
+}
+
+.dark .bar {
+  background-color: rgba(38, 30, 53, 1);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+/* Optional: smooth and clean scrolling */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but allow scroll */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+

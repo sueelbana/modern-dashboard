@@ -5,21 +5,26 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="flex h-screen bg-bg overflow-hidden relative">
+    <div className="flex min-h-screen bg-bg">
+      {/* Sidebar */}
       <Sidebar />
 
-      <div className="flex flex-col flex-1 overflow-hidden">
+      {/* Main Content Wrapper */}
+      <div className="flex flex-col flex-1 h-screen overflow-hidden">
+        {/* Top Navbar */}
         <TopNavbar />
 
-        <div className="flex flex-1 h-[calc(100vh-4rem)] overflow-hidden">
+        {/* Main Content with TodaySchedule aside */}
+        <div className="flex flex-1 overflow-hidden">
+          {/* Scrollable Page Content */}
           <div className="flex-1 overflow-y-auto p-6 pr-[340px]">
             <Outlet />
           </div>
+          {/* Sticky TodaySchedule Sidebar */}
+          <div className="fixed top-16 right-0 h-[calc(100vh-4rem)] w-[320px] border-l border-border bg-[#F5EFFC] z-10">
+            <TodaySchedule />
+          </div>
         </div>
-      </div>
-
-      <div className="absolute top-[4rem] right-0 h-[calc(100vh-4rem)] w-[320px] border-l border-border bg-[#F5EFFC] z-10">
-        <TodaySchedule />
       </div>
     </div>
   );

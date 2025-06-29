@@ -6,7 +6,7 @@ import RecentActivity from "./RecentActivity";
 
 const RightSidebar = () => {
   return (
-    <aside className="w-72 h-full preview-panel border-l p-5 overflow-y-auto text-sm text-text">
+    <aside className="w-72 preview-panel p-5 text-sm text-text">
       <ServerStatus />
       <Contacts />
       <Messages />

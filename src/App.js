@@ -24,29 +24,28 @@ function App() {
 
   return (
     <Router>
-      <div className="flex h-screen bg-bg overflow-hidden">
+     <div className="flex min-h-screen bg-bg overflow-y-auto overflow-x-hidden">
         <Sidebar />
         <div className="flex flex-col flex-1 overflow-hidden">
           <TopNavbar />
-          <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1">
             <Switch>
               <Route exact path="/">
-                <div className="flex flex-1 overflow-hidden">
-                  <div className="flex-1 overflow-y-auto p-6">
-                    <DashboardSummary />
-                  </div>
-                  <RightSidebar />
-                </div>
-              </Route>
+        <div className="flex flex-1">
+        <div className="flex-1 p-6">
+            <DashboardSummary />
+       </div>
+           <RightSidebar />
+
+      </div>
+    </Route>
 
               <Route path="/crypto">
                 <CryptoDashboard />
               </Route>
 
               <Route path="/email">
-                <div className="flex-1 overflow-y-auto p-6">
                   <Email />
-                </div>
               </Route>
 
               <Route path="/contacts">
