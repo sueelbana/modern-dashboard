@@ -5,13 +5,16 @@ import RightCardSidebar from "../components/RightCardSidebar";
 const Reports = () => {
   return (
     <div className="flex w-full h-full overflow-hidden bg-bg">
-      <div className="flex-1 pr-6">
+      {/* Main Content */}
+      <div className="flex-1 p-4">
         <InvoicingCards />
         <LatestInvoice />
       </div>
-      <div className="w-[320px] border-border preview-panel">
+
+      {/* Sidebar on the right */}
+        <div className="w-[330px] border-border preview-panel">
         <RightCardSidebar />
-      </div>
+        </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const RightCardSidebar = () => {
   const [activeTab, setActiveTab] = useState("Important");
 
   return (
-    <div className="w-70 preview-panel border-l border-border p-6 space-y-6">
+    <div className="w-[330px] border-border p-6 space-y-6 preview-panel">
       <div>
         <h3 className="font-semibold text-text mb-4">{t("card.title")}</h3>
         <div className="w-full rounded-xl p-4 text-white bg-gradient-to-tr from-indigo-500 via-purple-500 to-yellow-400 shadow-lg">

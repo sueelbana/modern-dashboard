@@ -61,9 +61,7 @@ function App() {
               </Route>
 
               <Route path="/reports">
-                <div className="flex-1 overflow-y-auto p-6">
                   <Reports />
-                </div>
               </Route>
 
               <Route path="/banking">
@@ -73,9 +71,7 @@ function App() {
               </Route>
 
               <Route path="/tickets">
-                <div className="flex-1 overflow-y-auto p-6">
                   <Ticketing />
-                </div>
               </Route>
             </Switch>
           </div>

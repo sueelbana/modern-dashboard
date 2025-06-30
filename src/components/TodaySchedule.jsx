@@ -36,7 +36,7 @@ const TodaySchedule = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="p-4 w-full lg:w-80 preview-panel">
+    <div className="w-[320px] h-full border-border p-6 space-y-6 preview-panel overflow-y-auto">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-bold text-text">
           {t("today_schedule.today")}
