@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
-import { createChart, CrosshairMode } from "lightweight-charts";
+import { createChart } from "lightweight-charts";
 
 const CandleChart = () => {
   const chartContainerRef = useRef(null);
 
   useEffect(() => {
     const chart = createChart(chartContainerRef.current, {
+      width: chartContainerRef.current.clientWidth,
+      height: 300,
       layout: {
         background: { color: "transparent" },
         textColor: "gray",
@@ -15,80 +17,70 @@ const CandleChart = () => {
         horzLines: { color: "#eee" },
       },
       crosshair: {
-        mode: CrosshairMode.Normal,
-      },
-      rightPriceScale: {
-        borderColor: "#ccc",
+        mode: 1,
       },
       timeScale: {
         borderColor: "#ccc",
         timeVisible: true,
-        secondsVisible: false,
+        lockVisibleTimeRangeOnResize: true,
+        fixLeftEdge: true,
+        fixRightEdge: true,
+        rightOffset: 0,
       },
-      height: 400,
+      rightPriceScale: {
+        borderColor: "#ccc",
+      },
     });
 
-    const candlestickSeries = chart.addCandlestickSeries({
-      upColor: "#2962FF",
-      downColor: "#D32F2F",
+    const candleSeries = chart.addCandlestickSeries({
+      upColor: "#f28b82",
+      downColor: "#6366f1",
       borderVisible: false,
-      wickUpColor: "#2962FF",
-      wickDownColor: "#D32F2F",
+      wickUpColor: "#f28b82",
+      wickDownColor: "#6366f1",
     });
 
-    const volumeSeries = chart.addHistogramSeries({
-      color: "#888",
-      priceFormat: { type: "volume" },
-      priceScaleId: "", // set empty to overlay
-      scaleMargins: { top: 0.8, bottom: 0 },
-    });
+    const baseTime = Math.floor(
+      new Date("2024-06-30T10:00:00").getTime() / 1000
+    );
+    const data = [];
+    let lastClose = 1.35;
 
-    const lineSeries1 = chart.addLineSeries({
-      color: "green",
-      lineWidth: 1,
-    });
+    for (let i = 0; i < 24; i++) {
+      const open = lastClose;
+      const close = +(open + (Math.random() - 0.5) * 0.2).toFixed(3);
+      const high = Math.max(open, close) + Math.random() * 0.1;
+      const low = Math.min(open, close) - Math.random() * 0.1;
 
-    const lineSeries2 = chart.addLineSeries({
-      color: "red",
-      lineWidth: 1,
-    });
-
-    const now = Date.now() / 1000;
-    const candleData = [];
-    const volumeData = [];
-    const lineData1 = [];
-    const lineData2 = [];
-
-    for (let i = 0; i < 30; i++) {
-      const time = Math.floor(now) - (30 - i) * 60 * 5;
-
-      const open = 1.2 + Math.random() * 0.4;
-      const close = open + (Math.random() - 0.5) * 0.3;
-      const high = Math.max(open, close) + Math.random() * 0.2;
-      const low = Math.min(open, close) - Math.random() * 0.2;
-      const volume = Math.floor(10 + Math.random() * 50);
-
-      candleData.push({ time, open, high, low, close });
-      volumeData.push({
-        time,
-        value: volume,
-        color: close > open ? "#2962FF" : "#D32F2F",
+      data.push({
+        time: baseTime + i * 3600,
+        open,
+        high,
+        low,
+        close,
       });
-      lineData1.push({ time, value: open + 0.1 });
-      lineData2.push({ time, value: open + 0.2 });
+
+      lastClose = close;
     }
 
-    candlestickSeries.setData(candleData);
-    volumeSeries.setData(volumeData);
-    lineSeries1.setData(lineData1);
-    lineSeries2.setData(lineData2);
+    candleSeries.setData(data);
 
-    chart.timeScale().fitContent();
+    chart.timeScale().setVisibleRange({
+      from: data[0].time,
+      to: data[data.length - 1].time,
+    });
 
-    return () => chart.remove();
+    const resizeObserver = new ResizeObserver(() => {
+      chart.applyOptions({
+        width: chartContainerRef.current.clientWidth,
+      });
+    });
+    resizeObserver.observe(chartContainerRef.current);
+
+    return () => resizeObserver.disconnect();
   }, []);
 
-  return <div ref={chartContainerRef} className="w-full h-[400px]" />;
+  return <div className="w-full rounded-lg border" ref={chartContainerRef} />;
 };
 
 export default CandleChart;
