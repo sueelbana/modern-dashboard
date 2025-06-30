@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { createChart } from "lightweight-charts";
+import React, { useEffect, useRef } from 'react';
+import { createChart } from 'lightweight-charts';
 
 const CandleChart = () => {
   const chartContainerRef = useRef(null);
@@ -9,18 +9,18 @@ const CandleChart = () => {
       width: chartContainerRef.current.clientWidth,
       height: 300,
       layout: {
-        background: { color: "transparent" },
-        textColor: "gray",
+        background: { color: 'transparent' },
+        textColor: 'gray',
       },
       grid: {
-        vertLines: { color: "#eee" },
-        horzLines: { color: "#eee" },
+        vertLines: { color: '#eee' },
+        horzLines: { color: '#eee' },
       },
       crosshair: {
         mode: 1,
       },
       timeScale: {
-        borderColor: "#ccc",
+        borderColor: '#ccc',
         timeVisible: true,
         lockVisibleTimeRangeOnResize: true,
         fixLeftEdge: true,
@@ -28,21 +28,19 @@ const CandleChart = () => {
         rightOffset: 0,
       },
       rightPriceScale: {
-        borderColor: "#ccc",
+        borderColor: '#ccc',
       },
     });
 
     const candleSeries = chart.addCandlestickSeries({
-      upColor: "#f28b82",
-      downColor: "#6366f1",
+      upColor: '#f28b82',
+      downColor: '#6366f1',
       borderVisible: false,
-      wickUpColor: "#f28b82",
-      wickDownColor: "#6366f1",
+      wickUpColor: '#f28b82',
+      wickDownColor: '#6366f1',
     });
 
-    const baseTime = Math.floor(
-      new Date("2024-06-30T10:00:00").getTime() / 1000
-    );
+    const baseTime = Math.floor(new Date('2024-06-30T10:00:00').getTime() / 1000);
     const data = [];
     let lastClose = 1.35;
 

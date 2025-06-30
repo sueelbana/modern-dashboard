@@ -109,10 +109,13 @@ const CryptoDashboard = () => {
         <div className="mt-6 w-full">
           <CandleChart />
         </div>
-
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-          <MarketActivity />
-          <BuySell />
+          <div className="w-full xl:w-[550px]">
+            <MarketActivity />
+          </div>
+          <div className="xl:ml-28">
+            <BuySell />
+          </div>
         </div>
       </div>
       <div className="w-[300px] border-border preview-panel">

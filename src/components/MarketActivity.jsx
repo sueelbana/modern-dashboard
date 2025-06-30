@@ -33,7 +33,7 @@ export default function MarketActivity() {
           {t("marketActivity.filter.month")} <span className="text-xs">▾</span>
         </button>
       </div>
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={256}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="name" />
